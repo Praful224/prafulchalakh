@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="static/css/styles.css" />
+  <link rel="stylesheet" href="/static/css/styles.css" />
   <style>
     .page-container {
       max-width: 1200px;
@@ -98,8 +98,8 @@
   <!-- Nav -->
   <nav class="site-nav" id="nav" aria-label="Main navigation">
     <div class="nav-inner">
-      <a href="index.html" class="brand" aria-label="Praful Chalakh home">
-        <img src="static/img/praful.png" alt="Praful Chalakh" class="brand-avatar" onerror="this.style.display='none'; document.getElementById('brand-fallback').style.display='grid';" />
+      <a href="/" class="brand" aria-label="Praful Chalakh home">
+        <img src="/static/img/praful.png" alt="Praful Chalakh" class="brand-avatar" onerror="this.style.display='none'; document.getElementById('brand-fallback').style.display='grid';" />
         <span class="brand-glyph" id="brand-fallback" style="display:none;" aria-hidden="true">PC</span>
         <span class="brand-name">Praful Chalakh</span>
         <span class="brand-sep" aria-hidden="true">|</span>
@@ -107,9 +107,9 @@
       </a>
 
       <ul class="nav-links" role="list">
-        <li><a href="index.html" >Overview</a></li>
+        <li><a href="/" >Overview</a></li>
         <li><a href="/experience" class="active">Experience</a></li>
-        <li><a href="projects.html" >Projects</a></li>
+        <li><a href="/projects" >Projects</a></li>
         <li><a href="/#skills">Skills</a></li>
         <li><a href="/#connect">Connect</a></li>
       </ul>
@@ -125,7 +125,7 @@
           </svg>
         </button>
 
-        <a href="assets/Praful_Chalakh_Resume.pdf" class="btn-resume" download="Praful_Chalakh_Resume.pdf">Resume ↓</a>
+        <a href="/assets/Praful_Chalakh_Resume.pdf" class="btn-resume" download="Praful_Chalakh_Resume.pdf">Resume ↓</a>
 
         <!-- Mobile Menu Toggle Button -->
         <button class="mobile-toggle-btn" id="mobileToggleBtn" aria-label="Toggle navigation menu" aria-expanded="false">
@@ -139,14 +139,14 @@
     <!-- Mobile Navigation Drawer -->
     <div class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
       <ul class="mobile-nav-list" role="list">
-        <li><a href="index.html" class="mobile-nav-item ">Overview</a></li>
+        <li><a href="/" class="mobile-nav-item ">Overview</a></li>
         <li><a href="/experience" class="mobile-nav-item active">Experience</a></li>
-        <li><a href="projects.html" class="mobile-nav-item ">Projects</a></li>
+        <li><a href="/projects" class="mobile-nav-item ">Projects</a></li>
         <li><a href="/#skills" class="mobile-nav-item">Skills</a></li>
         <li><a href="/#connect" class="mobile-nav-item">Connect</a></li>
       </ul>
       <div class="mobile-drawer-footer">
-        <a href="assets/Praful_Chalakh_Resume.pdf" class="mobile-drawer-resume-btn" download="Praful_Chalakh_Resume.pdf">
+        <a href="/assets/Praful_Chalakh_Resume.pdf" class="mobile-drawer-resume-btn" download="Praful_Chalakh_Resume.pdf">
           <span>Download Resume PDF</span>
           <span aria-hidden="true">↓</span>
         </a>
@@ -157,7 +157,7 @@
   <main id="main">
     
 <section class="page-container">
-  <a href="index.html" class="back-nav-link">← Back to Overview</a>
+  <a href="/" class="back-nav-link">← Back to Overview</a>
 
   <div class="section-heading-block" style="padding: 0 0 16px;">
     <span class="eyebrow">Career History</span>
@@ -366,7 +366,7 @@
     </div>
     <div class="tray-actions">
       <button class="tray-btn" id="copyEmailBtn">Copy Email</button>
-      <a href="assets/Praful_Chalakh_Resume.pdf" class="tray-btn tray-btn-accent" download>Resume PDF</a>
+      <a href="/assets/Praful_Chalakh_Resume.pdf" class="tray-btn tray-btn-accent" download>Resume PDF</a>
       <a href="https://linkedin.com/in/prafulchalakh" class="tray-btn tray-btn-hot" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
       <a href="https://github.com/Praful224" class="tray-btn" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
     </div>
@@ -384,7 +384,7 @@
 
   <div id="toast" role="status" aria-live="polite"></div>
 
-  <script src="static/js/avatar_and_utils.js"></script>
+  <script src="/static/js/avatar_and_utils.js"></script>
   <script>
     // Copy email handler
     const copyBtn = document.getElementById('copyEmailBtn');
