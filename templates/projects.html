@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}Featured Projects — {{ data.profile.name }}{% endblock %}
+
+{% block content %}
+<section class="page-container">
+  <a href="/" class="back-nav-link">← Back to Overview</a>
+
+  <div class="section-heading-block" style="padding: 0 0 16px;">
+    <span class="eyebrow">Production &amp; Open Source</span>
+    <h1 style="font-family: var(--serif); font-size: clamp(32px, 4.5vw, 54px); color: var(--ink); margin-bottom: 8px;">Featured Projects</h1>
+    <p class="section-subtitle">Systems architecture, AI control planes, automated security pipelines, and GitOps deployments.</p>
+  </div>
+  <hr class="section-rule" style="margin-bottom: 36px;" />
+
+  <div style="display: flex; flex-direction: column; gap: 36px;">
+    {% for proj in data.projects %}
+    <div style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.04);">
+      <span style="font-family: var(--mono); font-size: 11.5px; font-weight: 700; color: var(--hot); text-transform: uppercase;">{{ proj.category }}</span>
+      <h2 style="font-family: var(--serif); font-size: 30px; font-weight: 500; color: var(--ink); margin: 6px 0 12px;">{{ proj.title }}</h2>
+
+      <div class="metric-badge-row" style="margin: 16px 0 20px;">
+        {% for m in proj.metrics %}
+        <div class="metric-badge" style="font-size: 12px; padding: 6px 14px;">{{ m.label }}: <strong>{{ m.value }}</strong></div>
+        {% endfor %}
+      </div>
+
+      <p style="font-size: 15px; color: var(--body); line-height: 1.6; margin-bottom: 24px;">{{ proj.summary }}</p>
+
+      <div style="margin-bottom: 28px;">
+        <h3 style="font-family: var(--mono); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink); margin-bottom: 14px;">Technical Architecture</h3>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px;">
+          {% for h in proj.highlights %}
+          <li style="position: relative; padding-left: 22px; font-size: 14.5px; color: var(--body); line-height: 1.6;">
+            <span style="position: absolute; left: 0; color: var(--hot); font-weight: bold;">→</span>
+            {{ h }}
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; padding-top: 20px; border-top: 1px solid var(--border);">
+        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+          {% for t in proj.tech %}
+          <span style="font-family: var(--mono); font-size: 11.5px; padding: 3px 10px; background: var(--bg-inset); border: 1px solid var(--border); border-radius: 4px; color: var(--ink);">{{ t }}</span>
+          {% endfor %}
+        </div>
+        <div style="display: flex; gap: 14px;">
+          <a href="{{ proj.github }}" target="_blank" rel="noopener noreferrer" style="font-family: var(--mono); font-size: 12.5px; font-weight: 600; color: var(--navy); text-decoration: none;">GitHub ↗</a>
+          <a href="/projects/{{ proj.slug }}" style="font-family: var(--mono); font-size: 12.5px; font-weight: 600; color: var(--hot); text-decoration: none;">Project Breakdown →</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

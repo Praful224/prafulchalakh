@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}{{ exp.company }} — Experience Details{% endblock %}
+
+{% block content %}
+<section class="page-container">
+  <a href="/experience" class="back-nav-link">← Back to All Experience</a>
+
+  <div style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; padding: 48px; box-shadow: 0 16px 40px rgba(0,0,0,0.06);">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 16px; margin-bottom: 20px;">
+      <div>
+        <span style="font-family: var(--mono); font-size: 12px; font-weight: 700; color: var(--hot); text-transform: uppercase;">{{ exp.period }}</span>
+        <h1 style="font-family: var(--serif); font-size: clamp(36px, 5vw, 56px); font-weight: 500; color: var(--ink); margin: 6px 0;">{{ exp.company }}</h1>
+        <p style="font-size: 18px; font-weight: 600; color: var(--navy);">{{ exp.role }}</p>
+      </div>
+      <span style="font-family: var(--mono); font-size: 13.5px; color: var(--muted); background: var(--bg-inset); padding: 6px 16px; border-radius: 6px;">{{ exp.location }}</span>
+    </div>
+
+    <div class="metric-badge-row" style="margin: 24px 0 32px;">
+      {% for m in exp.metrics %}
+      <div class="metric-badge" style="font-size: 13px; padding: 8px 18px;">{{ m.label }}: <strong>{{ m.value }}</strong></div>
+      {% endfor %}
+    </div>
+
+    <hr class="section-rule" style="margin: 28px 0;" />
+
+    <div style="margin-bottom: 32px;">
+      <h3 style="font-family: var(--mono); font-size: 12.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink); margin-bottom: 16px;">Role Overview</h3>
+      <p style="font-size: 16px; color: var(--body); line-height: 1.7;">{{ exp.summary }}</p>
+    </div>
+
+    <div style="margin-bottom: 36px;">
+      <h3 style="font-family: var(--mono); font-size: 12.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink); margin-bottom: 18px;">Engineering Highlights &amp; Responsibilities</h3>
+      <ul style="list-style: none; display: flex; flex-direction: column; gap: 14px;">
+        {% for h in exp.highlights %}
+        <li style="position: relative; padding-left: 24px; font-size: 15px; color: var(--body); line-height: 1.7;">
+          <span style="position: absolute; left: 0; color: var(--hot); font-weight: bold; font-size: 16px;">→</span>
+          {{ h }}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div style="margin-bottom: 32px;">
+      <h3 style="font-family: var(--mono); font-size: 12.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink); margin-bottom: 16px;">Core Stack &amp; Technologies</h3>
+      <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+        {% for s in exp.skills %}
+        <span style="font-family: var(--mono); font-size: 12.5px; padding: 6px 14px; background: var(--bg-inset); border: 1px solid var(--border); border-radius: 4px; color: var(--ink);">{{ s }}</span>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div style="display: flex; gap: 16px; padding-top: 24px; border-top: 1px solid var(--border);">
+      <a href="{{ data.profile.linkedin }}" target="_blank" rel="noopener noreferrer" class="btn-primary">View on LinkedIn ↗</a>
+      <a href="/experience" class="btn-secondary">All Experiences</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

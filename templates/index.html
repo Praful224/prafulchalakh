@@ -1,0 +1,389 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- =====================================================
+     HERO
+===================================================== -->
+<section class="hero-section" id="hero" aria-label="Introduction">
+  <div class="hero-editorial">
+    <p class="hero-eyebrow">FORWARD DEPLOY · CLOUD ENGINEER · DEVSECOPS · SRE</p>
+
+    <h1 class="hero-title">
+      Build from scratch.<br />
+      Deploy with rigor.<br />
+      <em>Ship at scale.</em>
+    </h1>
+
+    <p class="hero-desc">
+      Versatile builder and cloud engineer who loves solving complex engineering puzzles from the ground up.
+      2+ years taking zero-to-one products into production, architecting multi-cloud AWS &amp; Azure infrastructure, hardening DevSecOps pipelines, and driving SRE resilience.
+    </p>
+
+    <!-- Role Badges Strip -->
+    <div class="role-pill-strip" aria-label="Open to roles">
+      {% for role in data.profile.primary_roles %}
+        <span class="role-pill">{{ role }}</span>
+      {% endfor %}
+    </div>
+
+    <div class="status-pill" role="status">
+      <span class="status-dot" aria-hidden="true"></span>
+      {{ data.profile.status }}
+    </div>
+
+    <div class="hero-cta">
+      <a href="/experience" class="btn-primary">View Experience →</a>
+      <a href="/projects" class="btn-secondary">Browse Projects →</a>
+      <a href="/resume" class="btn-outline-hot" download>Download Resume ↓</a>
+    </div>
+
+    <div class="fact-strip" aria-label="Key metrics">
+      <div class="fact-item">
+        <div class="fact-num">{{ data.profile.stats.years_experience }}</div>
+        <div class="fact-label">Years in<br />Production</div>
+      </div>
+      <div class="fact-item">
+        <div class="fact-num">{{ data.profile.stats.products_shipped }}</div>
+        <div class="fact-label">Products<br />Shipped 0→1</div>
+      </div>
+      <div class="fact-item">
+        <div class="fact-num">{{ data.profile.stats.cost_reduction }}</div>
+        <div class="fact-label">Infrastructure<br />Cost Savings</div>
+      </div>
+      <div class="fact-item">
+        <div class="fact-num">{{ data.profile.stats.certifications }}</div>
+        <div class="fact-label">Cloud Certs<br />(AWS 3× · AZ 1×)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Center: Profile Photo with Tech Bezel & Orbit Halo -->
+  <div id="avatar-stage" class="avatar-stage-wrap" role="img" aria-label="Praful Chalakh profile photo">
+    <div class="photo-card-container">
+      <div class="photo-glow-effect" aria-hidden="true"></div>
+      <div class="photo-frame">
+        <img src="/static/img/praful.png" alt="Praful Chalakh - Forward Deploy Engineer" class="hero-profile-img" />
+      </div>
+      <div class="photo-status-tag">
+        <span class="status-pulse-dot" aria-hidden="true"></span>
+        <span>Open to Roles</span>
+      </div>
+    </div>
+    <div id="avatar-orbit-canvas" class="avatar-orbit-layer" aria-hidden="true"></div>
+  </div>
+
+  <!-- Right: Terminal window -->
+  <div class="hero-terminal" role="region" aria-label="Tech stack summary">
+    <div class="term-header">
+      <div class="term-dots" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <span class="term-title">praful@fde ~ zsh</span>
+      <span></span>
+    </div>
+    <div class="term-body" aria-label="Terminal output">
+      <span class="t-row"><span class="t-prompt">$ </span>praful --mindset</span>
+      <span class="t-row t-out">→ Zero-to-One Builder (from scratch)</span>
+      <span class="t-gap"></span>
+
+      <span class="t-row"><span class="t-prompt">$ </span>target --roles</span>
+      <span class="t-row t-out">→ Cloud Eng · DevSecOps · SRE · FDE</span>
+      <span class="t-gap"></span>
+
+      <span class="t-row"><span class="t-prompt">$ </span>stack --primary</span>
+      <span class="t-row t-out">→ Go · Docker · Kubernetes · Terraform</span>
+      <span class="t-row t-out">→ AWS · Azure · CI/CD · SonarQube · Trivy</span>
+      <span class="t-gap"></span>
+
+      <span class="t-row"><span class="t-prompt">$ </span>deploy --impact</span>
+      <span class="t-row t-out">→ 7 products shipped (zero to one)</span>
+      <span class="t-row t-out">→ −30% MTTR · −50%+ Cloud Costs</span>
+      <span class="t-row t-out">→ 4× Certified (AWS SAA/SysOps/Dev + AZ-500)</span>
+      <span class="t-gap"></span>
+
+      <span class="t-row"><span class="t-prompt">$ </span>connect</span>
+      <span class="t-row t-out">→ <a class="t-link" href="{{ data.profile.github }}" target="_blank"
+          rel="noopener noreferrer">github</a>&nbsp; <a class="t-link" href="{{ data.profile.linkedin }}"
+          target="_blank" rel="noopener noreferrer">linkedin</a></span>
+      <span class="t-row t-out">→ <a class="t-link" href="{{ data.profile.instagram_personal }}" target="_blank"
+          rel="noopener noreferrer">@mee.praf</a>&nbsp; <a class="t-link" href="{{ data.profile.leetcode }}"
+          target="_blank" rel="noopener noreferrer">leetcode</a></span>
+      <span class="t-gap"></span>
+
+      <span class="t-row"><span class="t-prompt">$ </span><span class="t-out" id="term-cursor">▌</span></span>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     BUILDER MINDSET & CORE DISCIPLINES
+===================================================== -->
+<section class="page-container" style="padding-top: 10px; margin-bottom: 20px;">
+  <div class="section-heading-block" style="padding: 0 0 12px;">
+    <span class="eyebrow">Builder Philosophy &amp; Core Disciplines</span>
+    <h2>Architected From Scratch. Built to Scale.</h2>
+    <p class="section-subtitle">Comfortable diving into ambiguity, picking up any modern tech stack, and taking complex systems from inception to production reliability.</p>
+  </div>
+  <hr class="section-rule" style="margin-bottom: 24px;" />
+
+  <div class="discipline-grid">
+    <div class="discipline-card">
+      <div>
+        <div class="discipline-icon">01 · 0→1 BUILDER</div>
+        <h3 class="discipline-title">Forward Deploy &amp; Product Engineering</h3>
+        <p class="discipline-desc">Embeds directly with cross-functional product and customer teams. Ships production Go backend services, designs schemas, integrates APIs, and unblocks shipping velocity from day one.</p>
+      </div>
+      <div class="discipline-tags">
+        <span class="discipline-tag">Go (Golang)</span>
+        <span class="discipline-tag">0-to-1 Delivery</span>
+        <span class="discipline-tag">Docker</span>
+        <span class="discipline-tag">REST / APIs</span>
+      </div>
+    </div>
+
+    <div class="discipline-card">
+      <div>
+        <div class="discipline-icon">02 · CLOUD ARCHITECTURE</div>
+        <h3 class="discipline-title">Cloud Engineer (AWS &amp; Azure)</h3>
+        <p class="discipline-desc">Architects highly-available multi-tier cloud infrastructure with Terraform. Deep expertise across AWS VPCs, ALB, CloudFront, RDS, EKS, and Azure AKS with cost-efficient FinOps (−50%+ savings).</p>
+      </div>
+      <div class="discipline-tags">
+        <span class="discipline-tag">AWS 3× Certified</span>
+        <span class="discipline-tag">Terraform IaC</span>
+        <span class="discipline-tag">EKS / AKS</span>
+        <span class="discipline-tag">FinOps</span>
+      </div>
+    </div>
+
+    <div class="discipline-card">
+      <div>
+        <div class="discipline-icon">03 · SECURITY &amp; AUTOMATION</div>
+        <h3 class="discipline-title">DevSecOps Engineer</h3>
+        <p class="discipline-desc">Embeds security gates directly into CI/CD pipelines. SonarQube SAST gating, Trivy container scanning, OWASP Dependency-Check, least-privilege IAM, and zero-public SSH via AWS SSM.</p>
+      </div>
+      <div class="discipline-tags">
+        <span class="discipline-tag">Azure AZ-500</span>
+        <span class="discipline-tag">SonarQube</span>
+        <span class="discipline-tag">Trivy SAST</span>
+        <span class="discipline-tag">GitHub Actions</span>
+      </div>
+    </div>
+
+    <div class="discipline-card">
+      <div>
+        <div class="discipline-icon">04 · HIGH RELIABILITY</div>
+        <h3 class="discipline-title">Site Reliability Engineer (SRE)</h3>
+        <p class="discipline-desc">Drives −30% MTTR reduction through root-cause incident management, ITIL protocols, zero-downtime PostgreSQL schema migrations (1M+ records), and unified Prometheus/Grafana observability.</p>
+      </div>
+      <div class="discipline-tags">
+        <span class="discipline-tag">−30% MTTR</span>
+        <span class="discipline-tag">Prometheus &amp; Grafana</span>
+        <span class="discipline-tag">Zero Downtime</span>
+        <span class="discipline-tag">PostgreSQL</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     EXPERIENCE OVERVIEW
+===================================================== -->
+<section class="page-container" style="padding-top: 20px;">
+  <div class="section-heading-block" style="padding: 0 0 16px;">
+    <span class="eyebrow">Work Experience</span>
+    <h2>Career &amp; Engineering Impact</h2>
+    <p class="section-subtitle">Click on any position to view complete responsibilities, technical metrics, and
+      achievements.</p>
+  </div>
+  <hr class="section-rule" style="margin-bottom: 28px;" />
+
+  <div class="card-grid-page">
+    {% for exp in data.experiences %}
+    <a href="/experience/{{ exp.slug }}" class="clickable-card-item">
+      <div>
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+          <span
+            style="font-family: var(--mono); font-size: 11px; font-weight: 700; color: var(--hot); text-transform: uppercase;">{{
+            exp.period }}</span>
+          <span style="font-family: var(--mono); font-size: 11.5px; color: var(--muted);">{{ exp.location }}</span>
+        </div>
+        <h3
+          style="font-family: var(--serif); font-size: 26px; font-weight: 500; color: var(--ink); margin-bottom: 6px;">
+          {{ exp.company }}</h3>
+        <p style="font-size: 14.5px; font-weight: 600; color: var(--navy); margin-bottom: 12px;">{{ exp.role }}</p>
+        <p style="font-size: 13.5px; color: var(--body); line-height: 1.6; margin-bottom: 16px;">{{ exp.summary }}</p>
+
+        <div class="metric-badge-row">
+          {% for m in exp.metrics %}
+          <div class="metric-badge">{{ m.label }}: <strong>{{ m.value }}</strong></div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div
+        style="margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-family: var(--mono); font-size: 11px; color: var(--muted);">{{ exp.skills[:3]|join(' · ')
+          }}</span>
+        <span style="font-family: var(--mono); font-size: 12px; font-weight: 600; color: var(--hot);">View Full
+          Experience →</span>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- =====================================================
+     PROJECTS OVERVIEW
+===================================================== -->
+<section class="page-container" style="padding-top: 20px;">
+  <div class="section-heading-block" style="padding: 0 0 16px;">
+    <span class="eyebrow">Featured Projects</span>
+    <h2>Systems &amp; Architecture</h2>
+    <p class="section-subtitle">Click on any project to inspect architecture details, code snippets, and live
+      repositories.</p>
+  </div>
+  <hr class="section-rule" style="margin-bottom: 28px;" />
+
+  <div class="card-grid-page">
+    {% for proj in data.projects %}
+    <a href="/projects/{{ proj.slug }}" class="clickable-card-item">
+      <div>
+        <span
+          style="font-family: var(--mono); font-size: 11px; font-weight: 700; color: var(--hot); text-transform: uppercase;">{{
+          proj.category }}</span>
+        <h3 style="font-family: var(--serif); font-size: 24px; font-weight: 500; color: var(--ink); margin: 8px 0;">{{
+          proj.title }}</h3>
+        <p style="font-size: 13.5px; color: var(--body); line-height: 1.6; margin-bottom: 16px;">{{ proj.summary }}</p>
+
+        <div class="metric-badge-row">
+          {% for m in proj.metrics %}
+          <div class="metric-badge">{{ m.label }}: <strong>{{ m.value }}</strong></div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div
+        style="margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-family: var(--mono); font-size: 11px; color: var(--muted);">{{ proj.tech[:3]|join(' · ')
+          }}</span>
+        <span style="font-family: var(--mono); font-size: 12px; font-weight: 600; color: var(--hot);">View Project
+          →</span>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- =====================================================
+     SKILLS
+===================================================== -->
+<section id="skills" class="page-container" aria-label="Skills">
+  <div class="section-heading-block" style="padding: 0 0 16px;">
+    <span class="eyebrow">Technical Skills</span>
+    <h2>Stack &amp; Craft</h2>
+    <p class="section-subtitle">Technologies, tools, and practices I work with daily.</p>
+  </div>
+  <hr class="section-rule" style="margin-bottom: 28px;" />
+
+  <div class="skills-grid">
+    {% for cat, skills in data.skills.items() %}
+    <div class="skill-category">
+      <h3 class="skill-cat-title">{{ cat }}</h3>
+      <div class="skill-chips">
+        {% for s in skills.highlight %}
+        <span class="chip highlight">{{ s }}</span>
+        {% endfor %}
+        {% for s in skills.others %}
+        <span class="chip">{{ s }}</span>
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- =====================================================
+     CERTIFICATIONS
+===================================================== -->
+<section id="certifications" class="page-container" aria-label="Certifications">
+  <div class="section-heading-block" style="padding: 0 0 16px;">
+    <span class="eyebrow">Certifications</span>
+    <h2>Verified Credentials</h2>
+    <p class="section-subtitle">Official certifications in AWS cloud architecture, development, operations, and Azure
+      security.</p>
+  </div>
+  <hr class="section-rule" style="margin-bottom: 28px;" />
+
+  <div class="cert-grid">
+    {% for cert in data.certifications %}
+    <div class="cert-card">
+      <div class="cert-icon" aria-hidden="true">{{ cert.badge }}</div>
+      <div>
+        <div class="cert-name">{{ cert.name }}</div>
+        <div class="cert-issuer">{{ cert.issuer }}</div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- =====================================================
+     CONNECT HUB
+===================================================== -->
+<section id="connect" class="page-container" aria-label="Connect">
+  <div class="section-heading-block" style="padding: 0 0 16px;">
+    <span class="eyebrow">Connect &amp; Contact</span>
+    <h2>Reach Out &amp; Follow</h2>
+    <p class="section-subtitle">Available for Forward Deploy Engineer, Cloud, and DevSecOps positions.</p>
+  </div>
+  <hr class="section-rule" style="margin-bottom: 28px;" />
+
+  <div class="connect-grid" style="margin-top: 0;">
+    <!-- GitHub -->
+    <a href="{{ data.profile.github }}" class="connect-card" id="github-card" target="_blank" rel="noopener noreferrer">
+      <div>
+        <p class="connect-platform">GitHub ↗</p>
+        <p class="connect-handle">@Praful224</p>
+        <p class="connect-desc">Open-source Go tools, automation scripts, Docker setups, and cloud infra code.</p>
+        <div id="github-stats" class="connect-extra" aria-live="polite"></div>
+      </div>
+      <span class="connect-cta">Visit Profile →</span>
+    </a>
+
+    <!-- LinkedIn -->
+    <a href="{{ data.profile.linkedin }}" class="connect-card" target="_blank" rel="noopener noreferrer">
+      <div>
+        <p class="connect-platform">LinkedIn ↗</p>
+        <p class="connect-handle">@prafulchalakh</p>
+        <p class="connect-desc">Professional background, recommendations, engineering insights, and network.</p>
+        <span class="chip" style="margin-top: 8px; display: inline-block;">500+ Connections</span>
+      </div>
+      <span class="connect-cta">Connect →</span>
+    </a>
+
+    <!-- Instagram Personal -->
+    <a href="{{ data.profile.instagram_personal }}" class="connect-card" target="_blank" rel="noopener noreferrer">
+      <div>
+        <p class="connect-platform">Instagram ↗</p>
+        <p class="connect-handle">@mee.praf</p>
+        <p class="connect-desc">Life outside of terminal: travel, personal moments, and candid frames.</p>
+        <span class="chip" style="margin-top: 8px; display: inline-block;">Personal</span>
+      </div>
+      <span class="connect-cta">Follow →</span>
+    </a>
+
+    <!-- Instagram Creative/Tech -->
+    <a href="{{ data.profile.instagram_creative }}" class="connect-card" target="_blank" rel="noopener noreferrer">
+      <div>
+        <p class="connect-platform">Instagram ↗</p>
+        <p class="connect-handle">@etcpraful</p>
+        <p class="connect-desc">Tech life, creative pursuits, engineering behind the scenes, and updates.</p>
+        <span class="chip" style="margin-top: 8px; display: inline-block;">Tech &amp; Creative</span>
+      </div>
+      <span class="connect-cta">Follow →</span>
+    </a>
+  </div>
+</section>
+{% endblock %}
