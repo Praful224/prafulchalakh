@@ -283,7 +283,7 @@
   <div class="section-heading-block" style="padding: 0 0 16px;">
     <span class="eyebrow">Technical Skills</span>
     <h2>Stack &amp; Craft</h2>
-    <p class="section-subtitle">Technologies, tools, and practices I work with daily.</p>
+    <p class="section-subtitle">Technologies, tools, and engineering practices I work with daily.</p>
   </div>
   <hr class="section-rule" style="margin-bottom: 28px;" />
 
@@ -311,20 +311,30 @@
   <div class="section-heading-block" style="padding: 0 0 16px;">
     <span class="eyebrow">Certifications</span>
     <h2>Verified Credentials</h2>
-    <p class="section-subtitle">Official certifications in AWS cloud architecture, development, operations, and Azure
-      security.</p>
+    <p class="section-subtitle">Official industry certifications across cloud architecture, security, systems, and operations.</p>
   </div>
   <hr class="section-rule" style="margin-bottom: 28px;" />
 
   <div class="cert-grid">
     {% for cert in data.certifications %}
-    <div class="cert-card">
-      <div class="cert-icon" aria-hidden="true">{{ cert.badge }}</div>
+    <a href="{{ cert.verify_url }}" target="_blank" rel="noopener noreferrer" class="cert-card" aria-label="Verify {{ cert.name }} on {{ cert.verify_label }}">
       <div>
-        <div class="cert-name">{{ cert.name }}</div>
-        <div class="cert-issuer">{{ cert.issuer }}</div>
+        <div class="cert-top-row">
+          <div class="cert-icon" aria-hidden="true">{{ cert.badge }}</div>
+          <span class="cert-status-badge">
+            <span class="cert-status-dot" aria-hidden="true"></span>
+            Verified Credential
+          </span>
+        </div>
+        <h3 class="cert-name">{{ cert.name }}</h3>
+        <p class="cert-issuer">{{ cert.issuer }}</p>
       </div>
-    </div>
+
+      <div class="cert-bottom-row">
+        <span class="cert-verify-btn">{{ cert.verify_label }} <span class="cert-arrow" aria-hidden="true">↗</span></span>
+        <span class="cert-id-tag">Official</span>
+      </div>
+    </a>
     {% endfor %}
   </div>
 </section>

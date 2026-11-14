@@ -176,10 +176,34 @@ PORTFOLIO_DATA = {
         "Systems & Databases": {"highlight": ["Linux (RHEL, Ubuntu)"], "others": ["PostgreSQL", "MySQL", "Nginx", "Windows Server"]}
     },
     "certifications": [
-        {"name": "AWS Certified Solutions Architect – Associate", "issuer": "Amazon Web Services", "badge": "AWS"},
-        {"name": "AWS Certified SysOps Administrator – Associate (CloudOps)", "issuer": "Amazon Web Services", "badge": "AWS"},
-        {"name": "AWS Certified Developer – Associate", "issuer": "Amazon Web Services", "badge": "AWS"},
-        {"name": "Microsoft Certified: Azure Security Engineer Associate (AZ-500)", "issuer": "Microsoft Corporation", "badge": "AZ"}
+        {
+            "name": "AWS Certified Solutions Architect – Associate",
+            "issuer": "Amazon Web Services",
+            "badge": "AWS",
+            "verify_url": "https://www.credly.com/badges/8b5d5d14-b1cf-4159-a32c-a283b12ffd96/public_url",
+            "verify_label": "Verify on Credly"
+        },
+        {
+            "name": "AWS Certified SysOps Administrator – Associate (CloudOps)",
+            "issuer": "Amazon Web Services",
+            "badge": "AWS",
+            "verify_url": "https://cp.certmetrics.com/amazon/en/public/verify/credential/49d801d063ed4b92bc11d5b229d82f12",
+            "verify_label": "Verify on CertMetrics"
+        },
+        {
+            "name": "AWS Certified Developer – Associate",
+            "issuer": "Amazon Web Services",
+            "badge": "AWS",
+            "verify_url": "https://www.credly.com/badges/34561d2e-2f93-40cb-87cd-2c98a49f0a93/linked_in_profile",
+            "verify_label": "Verify on Credly"
+        },
+        {
+            "name": "Microsoft Certified: Azure Security Engineer Associate (AZ-500)",
+            "issuer": "Microsoft Corporation",
+            "badge": "AZ",
+            "verify_url": "https://learn.microsoft.com/api/credentials/share/en-us/PrafulChalakh-8078/2412980B734A439?sharingId=33EA7E2B95495467",
+            "verify_label": "Verify on Microsoft Learn"
+        }
     ]
 }
 

@@ -181,7 +181,7 @@ function initActiveNav() {
   var sectionIds = ['experience', 'projects', 'skills', 'connect'];
   var navLinks = {};
   sectionIds.forEach(function(id) {
-    var link = document.querySelector('.nav-links a[href="#' + id + '"]');
+    var link = document.querySelector('.nav-links a[href="#' + id + '"], .nav-links a[href="/#' + id + '"]');
     if (link) navLinks[id] = link;
   });
 
@@ -197,7 +197,7 @@ function initActiveNav() {
         navLinks[id].classList.add('active');
       }
     });
-  }, { threshold: 0.4 });
+  }, { threshold: 0.3 });
 
   sectionIds.forEach(function(id) {
     var section = document.getElementById(id);
@@ -334,13 +334,40 @@ function initMobileNav() {
    9. SMOOTH SCROLL (native-scroll polyfill for anchor links)
    ================================================================ */
 function initSmoothScroll() {
-  document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
-    anchor.addEventListener('click', function(e) {
-      var target = document.querySelector(anchor.getAttribute('href'));
-      if (!target) return;
-      e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
+  document.querySelectorAll('a[href*="#"]').forEach(function(anchor) {
+    var href = anchor.getAttribute('href');
+    if (!href || href === '#' || href.startsWith('http')) return;
+
+    var hashIndex = href.indexOf('#');
+    if (hashIndex === -1) return;
+    var hash = href.substring(hashIndex);
+    var path = href.substring(0, hashIndex);
+
+    // If link targets the current page (e.g. "#skills" or "/#skills" on home page)
+    var isCurrentPage = !path || path === '/' || path === window.location.pathname || (path === '/' && (window.location.pathname === '' || window.location.pathname === '/index.html'));
+
+    if (isCurrentPage) {
+      anchor.addEventListener('click', function(e) {
+        var target = document.querySelector(hash);
+        if (!target) return;
+        e.preventDefault();
+
+        var nav = document.getElementById('nav');
+        var navHeight = nav ? nav.offsetHeight : 60;
+        var targetY = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 16;
+
+        window.scrollTo({
+          top: Math.max(0, targetY),
+          behavior: 'smooth'
+        });
+
+        if (history.pushState) {
+          history.pushState(null, '', hash);
+        } else {
+          location.hash = hash;
+        }
+      });
+    }
   });
 }
 

@@ -1,3 +1,2 @@
-# Cloudflare Pages Redirects
-/resume /assets/Praful_Chalakh_Resume.pdf 302
-/api/data /api/data.json 200
+/resume  /assets/Praful_Chalakh_Resume.pdf  302
+/api/data  /api/data.json  200
