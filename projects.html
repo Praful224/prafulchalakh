@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Featured Projects — Praful Chalakh</title>
+  <meta name="description" content="Praful Chalakh — Forward Deploy · Cloud &amp; DevSecOps · SRE. Software Engineer — Golang, Docker &amp; CI/CD | Cloud, DevSecOps &amp; SRE" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="static/css/styles.css" />
+  <style>
+    .page-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 40px 48px;
+    }
+    .back-nav-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--hot);
+      text-decoration: none;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+    .back-nav-link:hover {
+      text-decoration: underline;
+    }
+    .card-grid-page {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 28px;
+      margin-top: 32px;
+    }
+    .clickable-card-item {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      position: relative;
+    }
+    .clickable-card-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+      border-color: var(--hot);
+    }
+    .metric-badge-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 16px 0;
+    }
+    .metric-badge {
+      font-family: var(--mono);
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 4px;
+      background: var(--bg-inset);
+      border: 1px solid var(--border);
+    }
+    .metric-badge strong {
+      color: var(--hot);
+    }
+  </style>
+  
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="site-nav" id="nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="brand" aria-label="Praful Chalakh home">
+        <img src="static/img/praful.png" alt="Praful Chalakh" class="brand-avatar" onerror="this.style.display='none'; document.getElementById('brand-fallback').style.display='grid';" />
+        <span class="brand-glyph" id="brand-fallback" style="display:none;" aria-hidden="true">PC</span>
+        <span class="brand-name">Praful Chalakh</span>
+        <span class="brand-sep" aria-hidden="true">|</span>
+        <span class="brand-role">FDE · Cloud · DevSecOps · SRE</span>
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="index.html" >Overview</a></li>
+        <li><a href="experience.html" >Experience</a></li>
+        <li><a href="/projects" class="active">Projects</a></li>
+        <li><a href="/#skills">Skills</a></li>
+        <li><a href="/#connect">Connect</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+          </svg>
+        </button>
+
+        <a href="assets/Praful_Chalakh_Resume.pdf" class="btn-resume" download="Praful_Chalakh_Resume.pdf">Resume ↓</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+    
+<section class="page-container">
+  <a href="index.html" class="back-nav-link">← Back to Overview</a>
+
+  <div class="section-heading-block" style="padding: 0 0 16px;">
+    <span class="eyebrow">Production &amp; Open Source</span>
+    <h1 style="font-family: var(--serif); font-size: clamp(32px, 4.5vw, 54px); color: var(--ink); margin-bottom: 8px;">Featured Projects</h1>
+    <p class="section-subtitle">Systems architecture, AI control planes, automated security pipelines, and GitOps deployments.</p>
+  </div>
+  <hr class="section-rule" style="margin-bottom: 36px;" />
+
+  <div style="display: flex; flex-direction: column; gap: 36px;">
+    
+    <div style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.04);">
+      <span style="font-family: var(--mono); font-size: 11.5px; font-weight: 700; color: var(--hot); text-transform: uppercase;">Autonomous Systems &amp; AI Infrastructure</span>
+      <h2 style="font-family: var(--serif); font-size: 30px; font-weight: 500; color: var(--ink); margin: 6px 0 12px;">DoktriAI: Autonomous Container Control Plane &amp; AI Agent Gateway</h2>
+
+      <div class="metric-badge-row" style="margin: 16px 0 20px;">
+        
+        <div class="metric-badge" style="font-size: 12px; padding: 6px 14px;">Language: <strong>Go</strong></div>
+        
+        <div class="metric-badge" style="font-size: 12px; padding: 6px 14px;">Protocol: <strong>MCP + JSON-RPC</strong></div>
+        
+        <div class="metric-badge" style="font-size: 12px; padding: 6px 14px;">Security: <strong>HMAC + RBAC</strong></div>
+        
+      </div>
+
+      <p style="font-size: 15px; color: var(--body); line-height: 1.6; margin-bottom: 24px;">Autonomous container control plane with an integrated Model Context Protocol (MCP) server in Go, featuring dry-run validators and Plan-Then-Execute (PTE) approval gates.</p>
+
+      <div style="margin-bottom: 28px;">
+        <h3 style="font-family: var(--mono); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink); margin-bottom: 14px;">Technical Architecture</h3>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px;">
+          
+          <li style="position: relative; padding-left: 22px; font-size: 14.5px; color: var(--body); line-height: 1.6;">
+            <span style="position: absolute; left: 0; color: var(--hot); font-weight: bold;">→</span>
+            Engineered an autonomous container control plane with an integrated MCP server in Go, enabling secure, declarative deployment, log streaming, and scaling via AI operational agents.
+          </li>
+          
+          <li style="position: relative; padding-left: 22px; font-size: 14.5px; color: var(--body); line-height: 1.6;">
+            <span style="position: absolute; left: 0; color: var(--hot); font-weight: bold;">→</span>
+            Built dry-run manifest validators, Unicode sanitizers, and HMAC-SHA256 API token verification to enforce RBAC and sanitize agent-generated infrastructure plans.
+          </li>
+          
+          <li style="position: relative; padding-left: 22px; font-size: 14.5px; color: var(--body); line-height: 1.6;">
+            <span style="position: absolute; left: 0; color: var(--hot); font-weight: bold;">→</span>
+            Implemented a Plan-Then-Execute (PTE) approval gate and workload-level circuit breakers to quarantine high-risk cluster actions and prevent cascading restart storms.
+          </li>
+          
+        </ul>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; padding-top: 20px; border-top: 1px solid var(--border);">
+        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+          
+          <span style="font-family: var(--mono); font-size: 11.5px; padding: 3px 10px; background: var(--bg-inset); border: 1px solid var(--border); border-radius: 4px; color: var(--ink);">Go (Golang)</span>
+          
+          <span style="font-family: var(--mono); font-size: 11.5px; padding: 3px 10px; background: var(--bg-inset); border: 1px solid var(--border); border-radius: 4px; color: var(--ink);">Docker</span>
+          
+          <span style="font-family: var(--mono); font-size: 11.5px; padding: 3px 10px; background: var(--bg-inset); border: 1px solid var(--border); border-radius: 4px; color: var(--ink);">Model Context Protocol (MCP)</span>
+          
+          <span style="font-family: var(--mono); font-size: 11.5px; padding: 3px 10px; background: var(--bg-inset); border: 1px solid var(--border); border-radius: 4px; color: var(--ink);">HMAC-SHA256</span>
+          
+          <span style="font-family: var(--mono); font-size: 11.5px; padding: 3px 10px; background: var(--bg-inset); border: 1px solid var(--border); border-radius: 4px; color: var(--ink);">JSON-RPC</span>
+          
+          <span style="font-family: var(--mono); font-size: 11.5px; padding: 3px 10px; background: var(--bg-inset); border: 1px solid var(--border); border-radius: 4px; color: var(--ink);">SSE</span>
+          
+          <span style="font-family: var(--mono); font-size: 11.5px; padding: 3px 10px; background: var(--bg-inset); border: 1px solid var(--border); border-radius: 4px; color: var(--ink);">RBAC</span>
+          
+        </div>
+        <div style="display: flex; gap: 14px;">
+          <a href="https://github.com/Praful224" target="_blank" rel="noopener noreferrer" style="font-family: var(--mono); font-size: 12.5px; font-weight: 600; color: var(--navy); text-decoration: none;">GitHub ↗</a>
+          <a href="/projects/doktriai" style="font-family: var(--mono); font-size: 12.5px; font-weight: 600; color: var(--hot); text-decoration: none;">Project Breakdown →</a>
+        </div>
+      </div>
+    </div>
+    
+    <div style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.04);">
+      <span style="font-family: var(--mono); font-size: 11.5px; font-weight: 700; color: var(--hot); text-transform: uppercase;">CI/CD &amp; Security Orchestration</span>
+      <h2 style="font-family: var(--serif); font-size: 30px; font-weight: 500; color: var(--ink); margin: 6px 0 12px;">Automated DevSecOps Compliance &amp; Security Orchestration Platform</h2>
+
+      <div class="metric-badge-row" style="margin: 16px 0 20px;">
+        
+        <div class="metric-badge" style="font-size: 12px; padding: 6px 14px;">Security Gates: <strong>SAST + Trivy</strong></div>
+        
+        <div class="metric-badge" style="font-size: 12px; padding: 6px 14px;">Vulnerabilities: <strong>0 Shipped</strong></div>
+        
+        <div class="metric-badge" style="font-size: 12px; padding: 6px 14px;">Build Speed: <strong>Multi-stage</strong></div>
+        
+      </div>
+
+      <p style="font-size: 15px; color: var(--body); line-height: 1.6; margin-bottom: 24px;">Multi-stage automated delivery platform enforcing Trivy container scanning, SonarQube SAST quality gates, and OWASP dependency checks.</p>
+
+      <div style="margin-bottom: 28px;">
+        <h3 style="font-family: var(--mono); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink); margin-bottom: 14px;">Technical Architecture</h3>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px;">
+          
+          <li style="position: relative; padding-left: 22px; font-size: 14.5px; color: var(--body); line-height: 1.6;">
+            <span style="position: absolute; left: 0; color: var(--hot); font-weight: bold;">→</span>
+            Built automated CI pipelines for artifact compilation and container image builds using isolated build agents.
+          </li>
+          
+          <li style="position: relative; padding-left: 22px; font-size: 14.5px; color: var(--body); line-height: 1.6;">
+            <span style="position: absolute; left: 0; color: var(--hot); font-weight: bold;">→</span>
+            Integrated Trivy container scans and SonarQube SAST gates into delivery pipelines to enforce security compliance before release.
+          </li>
+          
+          <li style="position: relative; padding-left: 22px; font-size: 14.5px; color: var(--body); line-height: 1.6;">
+            <span style="position: absolute; left: 0; color: var(--hot); font-weight: bold;">→</span>
+            Optimized build performance with multi-stage Docker builds, reducing image size and attack surface.
+          </li>
+          
+        </ul>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; padding-top: 20px; border-top: 1px solid var(--border);">
+        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+          
+          <span style="font-family: var(--mono); font-size: 11.5px; padding: 3px 10px; background: var(--bg-inset); border: 1px solid var(--border); border-radius: 4px; color: var(--ink);">Jenkins</span>
+          
+          <span style="font-family: var(--mono); font-size: 11.5px; padding: 3px 10px; background: var(--bg-inset); border: 1px solid var(--border); border-radius: 4px; color: var(--ink);">Docker</span>
+          
+          <span style="font-family: var(--mono); font-size: 11.5px; padding: 3px 10px; background: var(--bg-inset); border: 1px solid var(--border); border-radius: 4px; color: var(--ink);">Trivy</span>
+          
+          <span style="font-family: var(--mono); font-size: 11.5px; padding: 3px 10px; background: var(--bg-inset); border: 1px solid var(--border); border-radius: 4px; color: var(--ink);">SonarQube</span>
+          
+          <span style="font-family: var(--mono); font-size: 11.5px; padding: 3px 10px; background: var(--bg-inset); border: 1px solid var(--border); border-radius: 4px; color: var(--ink);">OWASP Dependency-Check</span>
+          
+          <span style="font-family: var(--mono); font-size: 11.5px; padding: 3px 10px; background: var(--bg-inset); border: 1px solid var(--border); border-radius: 4px; color: var(--ink);">Linux</span>
+          
+          <span style="font-family: var(--mono); font-size: 11.5px; padding: 3px 10px; background: var(--bg-inset); border: 1px solid var(--border); border-radius: 4px; color: var(--ink);">Bash</span>
+          
+        </div>
+        <div style="display: flex; gap: 14px;">
+          <a href="https://github.com/Praful224" target="_blank" rel="noopener noreferrer" style="font-family: var(--mono); font-size: 12.5px; font-weight: 600; color: var(--navy); text-decoration: none;">GitHub ↗</a>
+          <a href="/projects/devsecops-compliance-platform" style="font-family: var(--mono); font-size: 12.5px; font-weight: 600; color: var(--hot); text-decoration: none;">Project Breakdown →</a>
+        </div>
+      </div>
+    </div>
+    
+    <div style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.04);">
+      <span style="font-family: var(--mono); font-size: 11.5px; font-weight: 700; color: var(--hot); text-transform: uppercase;">Cloud-Native Infrastructure</span>
+      <h2 style="font-family: var(--serif); font-size: 30px; font-weight: 500; color: var(--ink); margin: 6px 0 12px;">GitOps-Driven Cloud-Native Deployment Architecture</h2>
+
+      <div class="metric-badge-row" style="margin: 16px 0 20px;">
+        
+        <div class="metric-badge" style="font-size: 12px; padding: 6px 14px;">Environments: <strong>Dev/Stg/Prod</strong></div>
+        
+        <div class="metric-badge" style="font-size: 12px; padding: 6px 14px;">Configuration: <strong>Zero Drift</strong></div>
+        
+        <div class="metric-badge" style="font-size: 12px; padding: 6px 14px;">Engine: <strong>ArgoCD + Helm</strong></div>
+        
+      </div>
+
+      <p style="font-size: 15px; color: var(--body); line-height: 1.6; margin-bottom: 24px;">Continuous delivery with ArgoCD and Helm reconciling microservice states across Amazon EKS and Azure AKS clusters with Git as the single source of truth.</p>
+
+      <div style="margin-bottom: 28px;">
+        <h3 style="font-family: var(--mono); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink); margin-bottom: 14px;">Technical Architecture</h3>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px;">
+          
+          <li style="position: relative; padding-left: 22px; font-size: 14.5px; color: var(--body); line-height: 1.6;">
+            <span style="position: absolute; left: 0; color: var(--hot); font-weight: bold;">→</span>
+            Implemented GitOps continuous delivery using ArgoCD and Helm to reconcile microservice state on Kubernetes clusters with Git as the single source of truth.
+          </li>
+          
+          <li style="position: relative; padding-left: 22px; font-size: 14.5px; color: var(--body); line-height: 1.6;">
+            <span style="position: absolute; left: 0; color: var(--hot); font-weight: bold;">→</span>
+            Standardized deployment parameterization across Dev/Staging/Production using modular Helm charts, eliminating environment configuration drift.
+          </li>
+          
+          <li style="position: relative; padding-left: 22px; font-size: 14.5px; color: var(--body); line-height: 1.6;">
+            <span style="position: absolute; left: 0; color: var(--hot); font-weight: bold;">→</span>
+            Configured cluster health monitoring with Prometheus and Grafana for automated alerts on drift or deployment degradation.
+          </li>
+          
+        </ul>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; padding-top: 20px; border-top: 1px solid var(--border);">
+        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+          
+          <span style="font-family: var(--mono); font-size: 11.5px; padding: 3px 10px; background: var(--bg-inset); border: 1px solid var(--border); border-radius: 4px; color: var(--ink);">ArgoCD</span>
+          
+          <span style="font-family: var(--mono); font-size: 11.5px; padding: 3px 10px; background: var(--bg-inset); border: 1px solid var(--border); border-radius: 4px; color: var(--ink);">Kubernetes</span>
+          
+          <span style="font-family: var(--mono); font-size: 11.5px; padding: 3px 10px; background: var(--bg-inset); border: 1px solid var(--border); border-radius: 4px; color: var(--ink);">EKS</span>
+          
+          <span style="font-family: var(--mono); font-size: 11.5px; padding: 3px 10px; background: var(--bg-inset); border: 1px solid var(--border); border-radius: 4px; color: var(--ink);">AKS</span>
+          
+          <span style="font-family: var(--mono); font-size: 11.5px; padding: 3px 10px; background: var(--bg-inset); border: 1px solid var(--border); border-radius: 4px; color: var(--ink);">Helm</span>
+          
+          <span style="font-family: var(--mono); font-size: 11.5px; padding: 3px 10px; background: var(--bg-inset); border: 1px solid var(--border); border-radius: 4px; color: var(--ink);">Prometheus</span>
+          
+          <span style="font-family: var(--mono); font-size: 11.5px; padding: 3px 10px; background: var(--bg-inset); border: 1px solid var(--border); border-radius: 4px; color: var(--ink);">Grafana</span>
+          
+          <span style="font-family: var(--mono); font-size: 11.5px; padding: 3px 10px; background: var(--bg-inset); border: 1px solid var(--border); border-radius: 4px; color: var(--ink);">GitOps</span>
+          
+        </div>
+        <div style="display: flex; gap: 14px;">
+          <a href="https://github.com/Praful224" target="_blank" rel="noopener noreferrer" style="font-family: var(--mono); font-size: 12.5px; font-weight: 600; color: var(--navy); text-decoration: none;">GitHub ↗</a>
+          <a href="/projects/gitops-cloud-native-deployment" style="font-family: var(--mono); font-size: 12.5px; font-weight: 600; color: var(--hot); text-decoration: none;">Project Breakdown →</a>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+  </main>
+
+  <!-- Recruiter Tray -->
+  <div class="recruiter-tray">
+    <div class="tray-left">
+      <h3>Let's build &amp; deploy together.</h3>
+      <p>Open to Cloud Engineer, DevSecOps, SRE, Platform &amp; Forward Deploy Engineer roles. Zero-to-one builder comfortable shipping from scratch. Based in Hyderabad · Open to relocation · Open to remote.</p>
+    </div>
+    <div class="tray-actions">
+      <button class="tray-btn" id="copyEmailBtn">Copy Email</button>
+      <a href="assets/Praful_Chalakh_Resume.pdf" class="tray-btn tray-btn-accent" download>Resume PDF</a>
+      <a href="https://linkedin.com/in/prafulchalakh" class="tray-btn tray-btn-hot" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+      <a href="https://github.com/Praful224" class="tray-btn" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <span>© 2026 Praful Chalakh · Built with purpose &amp; clean Python routing</span>
+    <div class="footer-links">
+      <a href="https://github.com/Praful224" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://linkedin.com/in/prafulchalakh" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="mailto:prafulchalakh224@gmail.com">Email</a>
+    </div>
+  </footer>
+
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <script src="static/js/avatar_and_utils.js"></script>
+  <script>
+    // Copy email handler
+    const copyBtn = document.getElementById('copyEmailBtn');
+    if (copyBtn) {
+      copyBtn.addEventListener('click', () => {
+        navigator.clipboard.writeText('prafulchalakh224@gmail.com').then(() => {
+          showToast('Email copied! 📋');
+        }).catch(() => {
+          showToast('prafulchalakh224@gmail.com');
+        });
+      });
+    }
+  </script>
+  
+</body>
+</html>

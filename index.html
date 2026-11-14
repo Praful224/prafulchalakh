@@ -3,530 +3,799 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Praful Chalakh — Forward Deploy Engineer</title>
-  <meta name="description" content="Praful Chalakh — Forward Deploy Engineer. Go · Docker · K8s · Terraform · AWS · Azure. 7 products shipped in US healthcare." />
+  <title>Praful Chalakh — Forward Deploy · Cloud &amp; DevSecOps · SRE</title>
+  <meta name="description" content="Praful Chalakh — Forward Deploy · Cloud &amp; DevSecOps · SRE. Software Engineer — Golang, Docker &amp; CI/CD | Cloud, DevSecOps &amp; SRE" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="static/css/styles.css" />
+  <style>
+    .page-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 40px 48px;
+    }
+    .back-nav-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--hot);
+      text-decoration: none;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+    .back-nav-link:hover {
+      text-decoration: underline;
+    }
+    .card-grid-page {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 28px;
+      margin-top: 32px;
+    }
+    .clickable-card-item {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      position: relative;
+    }
+    .clickable-card-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+      border-color: var(--hot);
+    }
+    .metric-badge-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 16px 0;
+    }
+    .metric-badge {
+      font-family: var(--mono);
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 4px;
+      background: var(--bg-inset);
+      border: 1px solid var(--border);
+    }
+    .metric-badge strong {
+      color: var(--hot);
+    }
+  </style>
+  
 </head>
 <body>
 
-  <!-- Skip link -->
-  <a href="#main" class="skip-link">Skip to main content</a>
-
-  <!-- =====================================================
-       NAV
-  ===================================================== -->
+  <!-- Nav -->
   <nav class="site-nav" id="nav" aria-label="Main navigation">
     <div class="nav-inner">
-      <a href="#" class="brand" aria-label="Praful Chalakh home">
-        <span class="brand-glyph" aria-hidden="true">PC</span>
+      <a href="/" class="brand" aria-label="Praful Chalakh home">
+        <img src="static/img/praful.png" alt="Praful Chalakh" class="brand-avatar" onerror="this.style.display='none'; document.getElementById('brand-fallback').style.display='grid';" />
+        <span class="brand-glyph" id="brand-fallback" style="display:none;" aria-hidden="true">PC</span>
         <span class="brand-name">Praful Chalakh</span>
         <span class="brand-sep" aria-hidden="true">|</span>
-        <span class="brand-role">FDE</span>
+        <span class="brand-role">FDE · Cloud · DevSecOps · SRE</span>
       </a>
+
       <ul class="nav-links" role="list">
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#connect">Connect</a></li>
+        <li><a href="/" class="active">Overview</a></li>
+        <li><a href="experience.html" >Experience</a></li>
+        <li><a href="projects.html" >Projects</a></li>
+        <li><a href="/#skills">Skills</a></li>
+        <li><a href="/#connect">Connect</a></li>
       </ul>
+
       <div class="nav-actions">
-        <button class="theme-btn" id="themeBtn" aria-label="Toggle light/dark theme">
-          <!-- Sun icon -->
-          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="5"/>
-            <line x1="12" y1="1" x2="12" y2="3"/>
-            <line x1="12" y1="21" x2="12" y2="23"/>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-            <line x1="1" y1="12" x2="3" y2="12"/>
-            <line x1="21" y1="12" x2="23" y2="12"/>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
           </svg>
-          <!-- Moon icon -->
-          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
           </svg>
         </button>
-        <a href="assets/Praful_Chalakh_Resume.pdf" class="btn-resume" download aria-label="Download Praful Chalakh resume PDF">Resume ↓</a>
+
+        <a href="assets/Praful_Chalakh_Resume.pdf" class="btn-resume" download="Praful_Chalakh_Resume.pdf">Resume ↓</a>
       </div>
     </div>
   </nav>
 
-  <!-- =====================================================
-       MAIN
-  ===================================================== -->
   <main id="main">
+    
+<!-- =====================================================
+     HERO
+===================================================== -->
+<section class="hero-section" id="hero" aria-label="Introduction">
+  <div class="hero-editorial">
+    <p class="hero-eyebrow">FORWARD DEPLOY · CLOUD ENGINEER · DEVSECOPS · SRE</p>
 
-    <!-- =================================================
-         HERO
-    ================================================= -->
-    <section id="hero" aria-label="Introduction">
+    <h1 class="hero-title">
+      Build from scratch.<br />
+      Deploy with rigor.<br />
+      <em>Ship at scale.</em>
+    </h1>
 
-      <!-- Left: Editorial text -->
-      <div class="hero-left">
-        <p class="hero-eyebrow">Forward Deploy Engineer</p>
+    <p class="hero-desc">
+      Versatile builder and cloud engineer who loves solving complex engineering puzzles from the ground up.
+      2+ years taking zero-to-one products into production, architecting multi-cloud AWS &amp; Azure infrastructure, hardening DevSecOps pipelines, and driving SRE resilience.
+    </p>
 
-        <h1 class="hero-title">
-          Deploy.<br />
-          Integrate.<br />
-          <em>Ship.</em>
-        </h1>
+    <!-- Role Badges Strip -->
+    <div class="role-pill-strip" aria-label="Open to roles">
+      
+        <span class="role-pill">Forward Deploy Engineer</span>
+      
+        <span class="role-pill">Cloud Engineer</span>
+      
+        <span class="role-pill">DevSecOps Engineer</span>
+      
+        <span class="role-pill">Site Reliability Engineer (SRE)</span>
+      
+        <span class="role-pill">Platform / DevOps Engineer</span>
+      
+        <span class="role-pill">Backend Systems Engineer</span>
+      
+    </div>
 
-        <p class="hero-desc">
-          Infrastructure engineer who lives at the customer boundary — integrating
-          complex healthcare systems, reducing MTTR, and shipping production
-          infrastructure across AWS &amp; Azure.
-        </p>
+    <div class="status-pill" role="status">
+      <span class="status-dot" aria-hidden="true"></span>
+      Actively interviewing for FDE, Cloud, DevSecOps &amp; SRE roles
+    </div>
 
-        <div class="status-pill">
-          <span class="status-dot" aria-hidden="true"></span>
-          Open to opportunities
+    <div class="hero-cta">
+      <a href="experience.html" class="btn-primary">View Experience →</a>
+      <a href="projects.html" class="btn-secondary">Browse Projects →</a>
+      <a href="assets/Praful_Chalakh_Resume.pdf" class="btn-outline-hot" download>Download Resume ↓</a>
+    </div>
+
+    <div class="fact-strip" aria-label="Key metrics">
+      <div class="fact-item">
+        <div class="fact-num">2+</div>
+        <div class="fact-label">Years in<br />Production</div>
+      </div>
+      <div class="fact-item">
+        <div class="fact-num">7</div>
+        <div class="fact-label">Products<br />Shipped 0→1</div>
+      </div>
+      <div class="fact-item">
+        <div class="fact-num">−50%+</div>
+        <div class="fact-label">Infrastructure<br />Cost Savings</div>
+      </div>
+      <div class="fact-item">
+        <div class="fact-num">4</div>
+        <div class="fact-label">Cloud Certs<br />(AWS 3× · AZ 1×)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Center: Profile Photo with Tech Bezel & Orbit Halo -->
+  <div id="avatar-stage" class="avatar-stage-wrap" role="img" aria-label="Praful Chalakh profile photo">
+    <div class="photo-card-container">
+      <div class="photo-glow-effect" aria-hidden="true"></div>
+      <div class="photo-frame">
+        <img src="static/img/praful.png" alt="Praful Chalakh - Forward Deploy Engineer" class="hero-profile-img" />
+      </div>
+      <div class="photo-status-tag">
+        <span class="status-pulse-dot" aria-hidden="true"></span>
+        <span>Open to Roles</span>
+      </div>
+    </div>
+    <div id="avatar-orbit-canvas" class="avatar-orbit-layer" aria-hidden="true"></div>
+  </div>
+
+  <!-- Right: Terminal window -->
+  <div class="hero-terminal" role="region" aria-label="Tech stack summary">
+    <div class="term-header">
+      <div class="term-dots" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <span class="term-title">praful@fde ~ zsh</span>
+      <span></span>
+    </div>
+    <div class="term-body" aria-label="Terminal output">
+      <span class="t-row"><span class="t-prompt">$ </span>praful --mindset</span>
+      <span class="t-row t-out">→ Zero-to-One Builder (from scratch)</span>
+      <span class="t-gap"></span>
+
+      <span class="t-row"><span class="t-prompt">$ </span>target --roles</span>
+      <span class="t-row t-out">→ Cloud Eng · DevSecOps · SRE · FDE</span>
+      <span class="t-gap"></span>
+
+      <span class="t-row"><span class="t-prompt">$ </span>stack --primary</span>
+      <span class="t-row t-out">→ Go · Docker · Kubernetes · Terraform</span>
+      <span class="t-row t-out">→ AWS · Azure · CI/CD · SonarQube · Trivy</span>
+      <span class="t-gap"></span>
+
+      <span class="t-row"><span class="t-prompt">$ </span>deploy --impact</span>
+      <span class="t-row t-out">→ 7 products shipped (zero to one)</span>
+      <span class="t-row t-out">→ −30% MTTR · −50%+ Cloud Costs</span>
+      <span class="t-row t-out">→ 4× Certified (AWS SAA/SysOps/Dev + AZ-500)</span>
+      <span class="t-gap"></span>
+
+      <span class="t-row"><span class="t-prompt">$ </span>connect</span>
+      <span class="t-row t-out">→ <a class="t-link" href="https://github.com/Praful224" target="_blank"
+          rel="noopener noreferrer">github</a>&nbsp; <a class="t-link" href="https://linkedin.com/in/prafulchalakh"
+          target="_blank" rel="noopener noreferrer">linkedin</a></span>
+      <span class="t-row t-out">→ <a class="t-link" href="https://instagram.com/mee.praf" target="_blank"
+          rel="noopener noreferrer">@mee.praf</a>&nbsp; <a class="t-link" href="https://leetcode.com/u/Prafulchalakh224"
+          target="_blank" rel="noopener noreferrer">leetcode</a></span>
+      <span class="t-gap"></span>
+
+      <span class="t-row"><span class="t-prompt">$ </span><span class="t-out" id="term-cursor">▌</span></span>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     BUILDER MINDSET & CORE DISCIPLINES
+===================================================== -->
+<section class="page-container" style="padding-top: 10px; margin-bottom: 20px;">
+  <div class="section-heading-block" style="padding: 0 0 12px;">
+    <span class="eyebrow">Builder Philosophy &amp; Core Disciplines</span>
+    <h2>Architected From Scratch. Built to Scale.</h2>
+    <p class="section-subtitle">Comfortable diving into ambiguity, picking up any modern tech stack, and taking complex systems from inception to production reliability.</p>
+  </div>
+  <hr class="section-rule" style="margin-bottom: 24px;" />
+
+  <div class="discipline-grid">
+    <div class="discipline-card">
+      <div>
+        <div class="discipline-icon">01 · 0→1 BUILDER</div>
+        <h3 class="discipline-title">Forward Deploy &amp; Product Engineering</h3>
+        <p class="discipline-desc">Embeds directly with cross-functional product and customer teams. Ships production Go backend services, designs schemas, integrates APIs, and unblocks shipping velocity from day one.</p>
+      </div>
+      <div class="discipline-tags">
+        <span class="discipline-tag">Go (Golang)</span>
+        <span class="discipline-tag">0-to-1 Delivery</span>
+        <span class="discipline-tag">Docker</span>
+        <span class="discipline-tag">REST / APIs</span>
+      </div>
+    </div>
+
+    <div class="discipline-card">
+      <div>
+        <div class="discipline-icon">02 · CLOUD ARCHITECTURE</div>
+        <h3 class="discipline-title">Cloud Engineer (AWS &amp; Azure)</h3>
+        <p class="discipline-desc">Architects highly-available multi-tier cloud infrastructure with Terraform. Deep expertise across AWS VPCs, ALB, CloudFront, RDS, EKS, and Azure AKS with cost-efficient FinOps (−50%+ savings).</p>
+      </div>
+      <div class="discipline-tags">
+        <span class="discipline-tag">AWS 3× Certified</span>
+        <span class="discipline-tag">Terraform IaC</span>
+        <span class="discipline-tag">EKS / AKS</span>
+        <span class="discipline-tag">FinOps</span>
+      </div>
+    </div>
+
+    <div class="discipline-card">
+      <div>
+        <div class="discipline-icon">03 · SECURITY &amp; AUTOMATION</div>
+        <h3 class="discipline-title">DevSecOps Engineer</h3>
+        <p class="discipline-desc">Embeds security gates directly into CI/CD pipelines. SonarQube SAST gating, Trivy container scanning, OWASP Dependency-Check, least-privilege IAM, and zero-public SSH via AWS SSM.</p>
+      </div>
+      <div class="discipline-tags">
+        <span class="discipline-tag">Azure AZ-500</span>
+        <span class="discipline-tag">SonarQube</span>
+        <span class="discipline-tag">Trivy SAST</span>
+        <span class="discipline-tag">GitHub Actions</span>
+      </div>
+    </div>
+
+    <div class="discipline-card">
+      <div>
+        <div class="discipline-icon">04 · HIGH RELIABILITY</div>
+        <h3 class="discipline-title">Site Reliability Engineer (SRE)</h3>
+        <p class="discipline-desc">Drives −30% MTTR reduction through root-cause incident management, ITIL protocols, zero-downtime PostgreSQL schema migrations (1M+ records), and unified Prometheus/Grafana observability.</p>
+      </div>
+      <div class="discipline-tags">
+        <span class="discipline-tag">−30% MTTR</span>
+        <span class="discipline-tag">Prometheus &amp; Grafana</span>
+        <span class="discipline-tag">Zero Downtime</span>
+        <span class="discipline-tag">PostgreSQL</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     EXPERIENCE OVERVIEW
+===================================================== -->
+<section class="page-container" style="padding-top: 20px;">
+  <div class="section-heading-block" style="padding: 0 0 16px;">
+    <span class="eyebrow">Work Experience</span>
+    <h2>Career &amp; Engineering Impact</h2>
+    <p class="section-subtitle">Click on any position to view complete responsibilities, technical metrics, and
+      achievements.</p>
+  </div>
+  <hr class="section-rule" style="margin-bottom: 28px;" />
+
+  <div class="card-grid-page">
+    
+    <a href="/experience/ascent-business-solutions" class="clickable-card-item">
+      <div>
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+          <span
+            style="font-family: var(--mono); font-size: 11px; font-weight: 700; color: var(--hot); text-transform: uppercase;">Aug 2026 – Present</span>
+          <span style="font-family: var(--mono); font-size: 11.5px; color: var(--muted);">Hyderabad, Telangana</span>
         </div>
+        <h3
+          style="font-family: var(--serif); font-size: 26px; font-weight: 500; color: var(--ink); margin-bottom: 6px;">
+          Ascent Business Solutions</h3>
+        <p style="font-size: 14.5px; font-weight: 600; color: var(--navy); margin-bottom: 12px;">Cloud &amp; DevSecOps Engineer — Product Engineering</p>
+        <p style="font-size: 13.5px; color: var(--body); line-height: 1.6; margin-bottom: 16px;">Taking US healthcare products from zero to one with 7 products in the pipeline. Owning cloud infrastructure, DevSecOps, and automated delivery pipelines with AI-assisted engineering.</p>
 
-        <div class="hero-cta">
-          <a href="#experience" class="btn-primary">View Work →</a>
-          <a href="#connect" class="btn-secondary">Get in Touch</a>
-        </div>
-
-        <div class="fact-strip" aria-label="Key metrics">
-          <div class="fact-item">
-            <div class="fact-num">2+</div>
-            <div class="fact-label">Years in<br />Production</div>
-          </div>
-          <div class="fact-item">
-            <div class="fact-num">7</div>
-            <div class="fact-label">Products<br />Shipped</div>
-          </div>
-          <div class="fact-item">
-            <div class="fact-num">−50%+</div>
-            <div class="fact-label">Infrastructure<br />Cost Savings</div>
-          </div>
-          <div class="fact-item">
-            <div class="fact-num">4</div>
-            <div class="fact-label">Cloud<br />Certifications</div>
-          </div>
+        <div class="metric-badge-row">
+          
+          <div class="metric-badge">Pipeline: <strong>7 Products</strong></div>
+          
+          <div class="metric-badge">Industry: <strong>US Healthcare</strong></div>
+          
+          <div class="metric-badge">Methodology: <strong>Zero-to-One</strong></div>
+          
         </div>
       </div>
 
-      <!-- Center: 3D Avatar (JS fills this) -->
-      <div id="avatar-stage" aria-hidden="true"></div>
-
-      <!-- Right: Terminal window -->
-      <div class="hero-terminal" role="region" aria-label="Tech stack summary">
-        <div class="term-header">
-          <div class="term-dots" aria-hidden="true">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          <span class="term-title">praful@fde ~ zsh</span>
-          <span></span>
+      <div
+        style="margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-family: var(--mono); font-size: 11px; color: var(--muted);">Go · Docker · Kubernetes</span>
+        <span style="font-family: var(--mono); font-size: 12px; font-weight: 600; color: var(--hot);">View Full
+          Experience →</span>
+      </div>
+    </a>
+    
+    <a href="/experience/tata-consultancy-services" class="clickable-card-item">
+      <div>
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+          <span
+            style="font-family: var(--mono); font-size: 11px; font-weight: 700; color: var(--hot); text-transform: uppercase;">Nov 2024 – Aug 2026</span>
+          <span style="font-family: var(--mono); font-size: 11.5px; color: var(--muted);">Hyderabad, Telangana</span>
         </div>
-        <div class="term-body" aria-label="Terminal output">
-          <span class="t-row"><span class="t-prompt">$ </span>role --target</span>
-          <span class="t-row t-out">→ Forward Deploy Engineer</span>
-          <span class="t-gap"></span>
+        <h3
+          style="font-family: var(--serif); font-size: 26px; font-weight: 500; color: var(--ink); margin-bottom: 6px;">
+          Tata Consultancy Services (TCS)</h3>
+        <p style="font-size: 14.5px; font-weight: 600; color: var(--navy); margin-bottom: 12px;">Software Engineer — DevOps &amp; Cloud Operations</p>
+        <p style="font-size: 13.5px; color: var(--body); line-height: 1.6; margin-bottom: 16px;">Enterprise cloud operations, CI/CD with SonarQube &amp; Trivy gating, PostgreSQL automated schema migrations for 1M+ records, and 50%+ cloud cost optimization.</p>
 
-          <span class="t-row"><span class="t-prompt">$ </span>stack --primary</span>
-          <span class="t-row t-out">→ Go · Docker · K8s</span>
-          <span class="t-row t-out">→ Terraform · AWS · Azure</span>
-          <span class="t-gap"></span>
-
-          <span class="t-row"><span class="t-prompt">$ </span>deploy --stats</span>
-          <span class="t-row t-out">→ products:  7 (US healthcare)</span>
-          <span class="t-row t-out">→ mttr:      −30%</span>
-          <span class="t-row t-out">→ cost:      −50%+</span>
-          <span class="t-row t-out">→ certs:     4 (AWS×3, AZ×1)</span>
-          <span class="t-gap"></span>
-
-          <span class="t-row"><span class="t-prompt">$ </span>connect</span>
-          <span class="t-row t-out">→ <a class="t-link" href="https://github.com/Praful224" target="_blank" rel="noopener noreferrer">github</a>&nbsp; <a class="t-link" href="https://linkedin.com/in/prafulchalakh" target="_blank" rel="noopener noreferrer">linkedin</a></span>
-          <span class="t-row t-out">→ <a class="t-link" href="https://instagram.com/mee.praf" target="_blank" rel="noopener noreferrer">@mee.praf</a>&nbsp; <a class="t-link" href="https://leetcode.com/u/Prafulchalakh224" target="_blank" rel="noopener noreferrer">leetcode</a></span>
-          <span class="t-gap"></span>
-
-          <span class="t-row"><span class="t-prompt">$ </span><span class="t-out" id="term-cursor">▌</span></span>
+        <div class="metric-badge-row">
+          
+          <div class="metric-badge">MTTR Reduced: <strong>−30%</strong></div>
+          
+          <div class="metric-badge">Cost Savings: <strong>50%+</strong></div>
+          
+          <div class="metric-badge">Records Automated: <strong>1M+</strong></div>
+          
         </div>
       </div>
 
-    </section>
+      <div
+        style="margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-family: var(--mono); font-size: 11px; color: var(--muted);">AWS · Azure · EKS</span>
+        <span style="font-family: var(--mono); font-size: 12px; font-weight: 600; color: var(--hot);">View Full
+          Experience →</span>
+      </div>
+    </a>
+    
+  </div>
+</section>
 
-    <!-- =================================================
-         EXPERIENCE — Belt section
-    ================================================= -->
-    <section class="belt-section" id="experience" aria-label="Work experience">
-      <div class="section-head container">
-        <div>
-          <p class="eyebrow">01 — Experience</p>
-          <h2 class="section-title">Deployed &amp; Delivered</h2>
+<!-- =====================================================
+     PROJECTS OVERVIEW
+===================================================== -->
+<section class="page-container" style="padding-top: 20px;">
+  <div class="section-heading-block" style="padding: 0 0 16px;">
+    <span class="eyebrow">Featured Projects</span>
+    <h2>Systems &amp; Architecture</h2>
+    <p class="section-subtitle">Click on any project to inspect architecture details, code snippets, and live
+      repositories.</p>
+  </div>
+  <hr class="section-rule" style="margin-bottom: 28px;" />
+
+  <div class="card-grid-page">
+    
+    <a href="/projects/doktriai" class="clickable-card-item">
+      <div>
+        <span
+          style="font-family: var(--mono); font-size: 11px; font-weight: 700; color: var(--hot); text-transform: uppercase;">Autonomous Systems &amp; AI Infrastructure</span>
+        <h3 style="font-family: var(--serif); font-size: 24px; font-weight: 500; color: var(--ink); margin: 8px 0;">DoktriAI: Autonomous Container Control Plane &amp; AI Agent Gateway</h3>
+        <p style="font-size: 13.5px; color: var(--body); line-height: 1.6; margin-bottom: 16px;">Autonomous container control plane with an integrated Model Context Protocol (MCP) server in Go, featuring dry-run validators and Plan-Then-Execute (PTE) approval gates.</p>
+
+        <div class="metric-badge-row">
+          
+          <div class="metric-badge">Language: <strong>Go</strong></div>
+          
+          <div class="metric-badge">Protocol: <strong>MCP + JSON-RPC</strong></div>
+          
+          <div class="metric-badge">Security: <strong>HMAC + RBAC</strong></div>
+          
         </div>
-        <p class="belt-hint" aria-hidden="true">Drag to scrub →</p>
       </div>
 
-      <div class="belt-stage" id="exp-stage" data-belt="experience" role="region" aria-label="Experience belt — drag to browse">
-        <!-- Belt layers (cards injected by JS) -->
-        <div class="belt-cards" id="exp-cards"></div>
+      <div
+        style="margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-family: var(--mono); font-size: 11px; color: var(--muted);">Go (Golang) · Docker · Model Context Protocol (MCP)</span>
+        <span style="font-family: var(--mono); font-size: 12px; font-weight: 600; color: var(--hot);">View Project
+          →</span>
       </div>
-    </section>
+    </a>
+    
+    <a href="/projects/devsecops-compliance-platform" class="clickable-card-item">
+      <div>
+        <span
+          style="font-family: var(--mono); font-size: 11px; font-weight: 700; color: var(--hot); text-transform: uppercase;">CI/CD &amp; Security Orchestration</span>
+        <h3 style="font-family: var(--serif); font-size: 24px; font-weight: 500; color: var(--ink); margin: 8px 0;">Automated DevSecOps Compliance &amp; Security Orchestration Platform</h3>
+        <p style="font-size: 13.5px; color: var(--body); line-height: 1.6; margin-bottom: 16px;">Multi-stage automated delivery platform enforcing Trivy container scanning, SonarQube SAST quality gates, and OWASP dependency checks.</p>
 
-    <!-- =================================================
-         PROJECTS — Belt section
-    ================================================= -->
-    <section class="belt-section" id="projects" aria-label="Projects">
-      <div class="section-head container">
-        <div>
-          <p class="eyebrow">02 — Projects</p>
-          <h2 class="section-title">Built &amp; Open</h2>
+        <div class="metric-badge-row">
+          
+          <div class="metric-badge">Security Gates: <strong>SAST + Trivy</strong></div>
+          
+          <div class="metric-badge">Vulnerabilities: <strong>0 Shipped</strong></div>
+          
+          <div class="metric-badge">Build Speed: <strong>Multi-stage</strong></div>
+          
         </div>
-        <p class="belt-hint" aria-hidden="true">Drag to scrub →</p>
       </div>
 
-      <!-- Filter tabs -->
-      <div class="filter-row container" role="group" aria-label="Filter projects by technology">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="go">Go</button>
-        <button class="filter-btn" data-filter="devops">DevOps</button>
-        <button class="filter-btn" data-filter="cloud">Cloud</button>
+      <div
+        style="margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-family: var(--mono); font-size: 11px; color: var(--muted);">Jenkins · Docker · Trivy</span>
+        <span style="font-family: var(--mono); font-size: 12px; font-weight: 600; color: var(--hot);">View Project
+          →</span>
+      </div>
+    </a>
+    
+    <a href="/projects/gitops-cloud-native-deployment" class="clickable-card-item">
+      <div>
+        <span
+          style="font-family: var(--mono); font-size: 11px; font-weight: 700; color: var(--hot); text-transform: uppercase;">Cloud-Native Infrastructure</span>
+        <h3 style="font-family: var(--serif); font-size: 24px; font-weight: 500; color: var(--ink); margin: 8px 0;">GitOps-Driven Cloud-Native Deployment Architecture</h3>
+        <p style="font-size: 13.5px; color: var(--body); line-height: 1.6; margin-bottom: 16px;">Continuous delivery with ArgoCD and Helm reconciling microservice states across Amazon EKS and Azure AKS clusters with Git as the single source of truth.</p>
+
+        <div class="metric-badge-row">
+          
+          <div class="metric-badge">Environments: <strong>Dev/Stg/Prod</strong></div>
+          
+          <div class="metric-badge">Configuration: <strong>Zero Drift</strong></div>
+          
+          <div class="metric-badge">Engine: <strong>ArgoCD + Helm</strong></div>
+          
+        </div>
       </div>
 
-      <div class="belt-stage" id="proj-stage" data-belt="projects" role="region" aria-label="Projects belt — drag to browse">
-        <!-- Belt layers (cards injected by JS) -->
-        <div class="belt-cards" id="proj-cards"></div>
+      <div
+        style="margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-family: var(--mono); font-size: 11px; color: var(--muted);">ArgoCD · Kubernetes · EKS</span>
+        <span style="font-family: var(--mono); font-size: 12px; font-weight: 600; color: var(--hot);">View Project
+          →</span>
       </div>
-    </section>
+    </a>
+    
+  </div>
+</section>
 
-    <!-- =================================================
-         SKILLS
-    ================================================= -->
-    <section id="skills" aria-label="Skills">
-      <div class="section-heading-block">
-        <span class="eyebrow">03 — Skills</span>
-        <h2>Stack &amp; Craft</h2>
-        <p class="section-subtitle">Technologies, tools, and practices I work with daily.</p>
+<!-- =====================================================
+     SKILLS
+===================================================== -->
+<section id="skills" class="page-container" aria-label="Skills">
+  <div class="section-heading-block" style="padding: 0 0 16px;">
+    <span class="eyebrow">Technical Skills</span>
+    <h2>Stack &amp; Craft</h2>
+    <p class="section-subtitle">Technologies, tools, and practices I work with daily.</p>
+  </div>
+  <hr class="section-rule" style="margin-bottom: 28px;" />
+
+  <div class="skills-grid">
+    
+    <div class="skill-category">
+      <h3 class="skill-cat-title">Programming</h3>
+      <div class="skill-chips">
+        
+        <span class="chip highlight">Go (Golang)</span>
+        
+        
+        <span class="chip">Python</span>
+        
+        <span class="chip">Bash</span>
+        
+        <span class="chip">SQL</span>
+        
       </div>
-      <hr class="section-rule" />
-
-      <div class="skills-grid">
-
-        <div class="skill-category">
-          <h3 class="skill-cat-title">Languages</h3>
-          <div class="skill-chips">
-            <span class="chip highlight">Go</span>
-            <span class="chip highlight">Python</span>
-            <span class="chip">Bash</span>
-            <span class="chip">SQL</span>
-            <span class="chip">HCL</span>
-            <span class="chip">YAML</span>
-          </div>
-        </div>
-
-        <div class="skill-category">
-          <h3 class="skill-cat-title">Infrastructure &amp; DevOps</h3>
-          <div class="skill-chips">
-            <span class="chip highlight">Docker</span>
-            <span class="chip highlight">Kubernetes</span>
-            <span class="chip highlight">Terraform</span>
-            <span class="chip">Helm</span>
-            <span class="chip">Ansible</span>
-            <span class="chip">GitHub Actions</span>
-            <span class="chip">Jenkins</span>
-            <span class="chip">ArgoCD</span>
-          </div>
-        </div>
-
-        <div class="skill-category">
-          <h3 class="skill-cat-title">Cloud Platforms</h3>
-          <div class="skill-chips">
-            <span class="chip highlight">AWS</span>
-            <span class="chip highlight">Azure</span>
-            <span class="chip">EC2</span>
-            <span class="chip">EKS</span>
-            <span class="chip">S3</span>
-            <span class="chip">IAM</span>
-            <span class="chip">Lambda</span>
-            <span class="chip">AKS</span>
-            <span class="chip">Azure DevOps</span>
-          </div>
-        </div>
-
-        <div class="skill-category">
-          <h3 class="skill-cat-title">Observability &amp; Reliability</h3>
-          <div class="skill-chips">
-            <span class="chip highlight">Prometheus</span>
-            <span class="chip highlight">Grafana</span>
-            <span class="chip">PagerDuty</span>
-            <span class="chip">Datadog</span>
-            <span class="chip">ELK Stack</span>
-            <span class="chip">Loki</span>
-            <span class="chip">OpenTelemetry</span>
-          </div>
-        </div>
-
-        <div class="skill-category">
-          <h3 class="skill-cat-title">Networking &amp; Security</h3>
-          <div class="skill-chips">
-            <span class="chip highlight">HL7 / FHIR</span>
-            <span class="chip">VPC</span>
-            <span class="chip">Load Balancers</span>
-            <span class="chip">TLS/SSL</span>
-            <span class="chip">IAM Policies</span>
-            <span class="chip">Vault</span>
-            <span class="chip">HIPAA Controls</span>
-          </div>
-        </div>
-
-        <div class="skill-category">
-          <h3 class="skill-cat-title">Databases &amp; Messaging</h3>
-          <div class="skill-chips">
-            <span class="chip highlight">PostgreSQL</span>
-            <span class="chip">Redis</span>
-            <span class="chip">Kafka</span>
-            <span class="chip">RabbitMQ</span>
-            <span class="chip">DynamoDB</span>
-            <span class="chip">MongoDB</span>
-          </div>
-        </div>
-
-        <div class="skill-category">
-          <h3 class="skill-cat-title">Forward Deploy Practices</h3>
-          <div class="skill-chips">
-            <span class="chip highlight">Customer Integration</span>
-            <span class="chip highlight">On-site Deployment</span>
-            <span class="chip">SLA Management</span>
-            <span class="chip">Runbook Authoring</span>
-            <span class="chip">Incident Command</span>
-            <span class="chip">Stakeholder Comms</span>
-          </div>
-        </div>
-
-        <div class="skill-category">
-          <h3 class="skill-cat-title">Tools &amp; Workflow</h3>
-          <div class="skill-chips">
-            <span class="chip highlight">Git</span>
-            <span class="chip">Linux</span>
-            <span class="chip">Jira</span>
-            <span class="chip">Confluence</span>
-            <span class="chip">Postman</span>
-            <span class="chip">VS Code</span>
-            <span class="chip">Vim</span>
-          </div>
-        </div>
-
+    </div>
+    
+    <div class="skill-category">
+      <h3 class="skill-cat-title">Containers &amp; VCS</h3>
+      <div class="skill-chips">
+        
+        <span class="chip highlight">Docker</span>
+        
+        <span class="chip highlight">Kubernetes (EKS, AKS)</span>
+        
+        
+        <span class="chip">Git</span>
+        
+        <span class="chip">Helm</span>
+        
+        <span class="chip">ArgoCD (GitOps)</span>
+        
+        <span class="chip">Docker Compose</span>
+        
       </div>
-    </section>
-
-    <!-- =================================================
-         CERTIFICATIONS
-    ================================================= -->
-    <section id="certifications" aria-label="Certifications">
-      <div class="section-heading-block">
-        <span class="eyebrow">04 — Certifications</span>
-        <h2>Cloud Certified</h2>
-        <p class="section-subtitle">AWS × 3 &nbsp;·&nbsp; Azure × 1</p>
+    </div>
+    
+    <div class="skill-category">
+      <h3 class="skill-cat-title">CI/CD &amp; Automation</h3>
+      <div class="skill-chips">
+        
+        <span class="chip highlight">GitHub Actions</span>
+        
+        <span class="chip highlight">Jenkins</span>
+        
+        
+        <span class="chip">Azure DevOps</span>
+        
+        <span class="chip">Ansible</span>
+        
+        <span class="chip">Pipeline Automation</span>
+        
       </div>
-      <hr class="section-rule" />
-
-      <div class="cert-grid">
-
-        <div class="cert-card">
-          <div class="cert-icon" aria-hidden="true">AWS</div>
-          <div class="cert-info">
-            <div class="cert-name">AWS Certified Solutions Architect – Associate</div>
-            <div class="cert-issuer">Amazon Web Services · 2024</div>
-          </div>
-        </div>
-
-        <div class="cert-card">
-          <div class="cert-icon" aria-hidden="true">AWS</div>
-          <div class="cert-info">
-            <div class="cert-name">AWS Certified Developer – Associate</div>
-            <div class="cert-issuer">Amazon Web Services · 2024</div>
-          </div>
-        </div>
-
-        <div class="cert-card">
-          <div class="cert-icon" aria-hidden="true">AWS</div>
-          <div class="cert-info">
-            <div class="cert-name">AWS Certified Cloud Practitioner</div>
-            <div class="cert-issuer">Amazon Web Services · 2023</div>
-          </div>
-        </div>
-
-        <div class="cert-card">
-          <div class="cert-icon" aria-hidden="true">AZ</div>
-          <div class="cert-info">
-            <div class="cert-name">Microsoft Azure Fundamentals (AZ-900)</div>
-            <div class="cert-issuer">Microsoft · 2023</div>
-          </div>
-        </div>
-
+    </div>
+    
+    <div class="skill-category">
+      <h3 class="skill-cat-title">Code Quality &amp; Testing</h3>
+      <div class="skill-chips">
+        
+        <span class="chip highlight">SonarQube (SAST)</span>
+        
+        <span class="chip highlight">Trivy</span>
+        
+        
+        <span class="chip">OWASP Dependency-Check</span>
+        
+        <span class="chip">Dry-run validators</span>
+        
       </div>
-    </section>
-
-    <!-- =================================================
-         CONNECT HUB
-    ================================================= -->
-    <section id="connect" aria-label="Connect with Praful">
-      <div class="section-heading-block">
-        <span class="eyebrow">05 — Connect</span>
-        <h2>Let's Talk</h2>
-        <p class="section-subtitle">Find me across the internet.</p>
+    </div>
+    
+    <div class="skill-category">
+      <h3 class="skill-cat-title">AI-Assisted Engineering</h3>
+      <div class="skill-chips">
+        
+        <span class="chip highlight">Claude</span>
+        
+        <span class="chip highlight">Cursor</span>
+        
+        
+        <span class="chip">Model Context Protocol (MCP)</span>
+        
+        <span class="chip">AI-assisted debugging</span>
+        
       </div>
-      <hr class="section-rule" />
-
-      <div class="connect-grid">
-
-        <a class="connect-card" id="github-card" href="https://github.com/Praful224" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile — Praful224">
-          <div class="connect-platform">GitHub</div>
-          <div class="connect-handle">Praful224</div>
-          <div class="connect-desc">Open-source work, infrastructure tooling, and personal projects.</div>
-          <span id="github-stats"></span>
-          <div class="connect-cta">Visit →</div>
-        </a>
-
-        <a class="connect-card" href="https://linkedin.com/in/prafulchalakh" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile — prafulchalakh">
-          <div class="connect-platform">LinkedIn</div>
-          <div class="connect-handle">prafulchalakh</div>
-          <div class="connect-desc">Professional background, recommendations, and work history.</div>
-          <div class="connect-cta">Connect →</div>
-        </a>
-
-        <a class="connect-card" href="https://instagram.com/mee.praf" target="_blank" rel="noopener noreferrer" aria-label="Instagram — @mee.praf">
-          <div class="connect-platform">Instagram</div>
-          <div class="connect-handle">@mee.praf</div>
-          <div class="connect-desc">Personal account — travel, coffee, and life outside the terminal.</div>
-          <div class="connect-cta">Follow →</div>
-        </a>
-
-        <a class="connect-card" href="https://instagram.com/etcpraful" target="_blank" rel="noopener noreferrer" aria-label="Instagram — @etcpraful">
-          <div class="connect-platform">Instagram</div>
-          <div class="connect-handle">@etcpraful</div>
-          <div class="connect-desc">Tech thoughts, side projects, and engineering process.</div>
-          <div class="connect-cta">Follow →</div>
-        </a>
-
+    </div>
+    
+    <div class="skill-category">
+      <h3 class="skill-cat-title">Cloud &amp; IaC</h3>
+      <div class="skill-chips">
+        
+        <span class="chip highlight">AWS (EC2, EKS, RDS, ALB, S3, IAM)</span>
+        
+        <span class="chip highlight">Azure</span>
+        
+        <span class="chip highlight">Terraform</span>
+        
+        
+        <span class="chip">ARM Templates</span>
+        
+        <span class="chip">FinOps</span>
+        
       </div>
-    </section>
+    </div>
+    
+    <div class="skill-category">
+      <h3 class="skill-cat-title">Debugging &amp; Reliability</h3>
+      <div class="skill-chips">
+        
+        <span class="chip highlight">Root-Cause Analysis</span>
+        
+        <span class="chip highlight">Prometheus</span>
+        
+        <span class="chip highlight">Grafana</span>
+        
+        
+        <span class="chip">Dynatrace</span>
+        
+        <span class="chip">CloudWatch</span>
+        
+        <span class="chip">Alertmanager</span>
+        
+        <span class="chip">ITIL</span>
+        
+      </div>
+    </div>
+    
+    <div class="skill-category">
+      <h3 class="skill-cat-title">Systems &amp; Databases</h3>
+      <div class="skill-chips">
+        
+        <span class="chip highlight">Linux (RHEL, Ubuntu)</span>
+        
+        
+        <span class="chip">PostgreSQL</span>
+        
+        <span class="chip">MySQL</span>
+        
+        <span class="chip">Nginx</span>
+        
+        <span class="chip">Windows Server</span>
+        
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<!-- =====================================================
+     CERTIFICATIONS
+===================================================== -->
+<section id="certifications" class="page-container" aria-label="Certifications">
+  <div class="section-heading-block" style="padding: 0 0 16px;">
+    <span class="eyebrow">Certifications</span>
+    <h2>Verified Credentials</h2>
+    <p class="section-subtitle">Official certifications in AWS cloud architecture, development, operations, and Azure
+      security.</p>
+  </div>
+  <hr class="section-rule" style="margin-bottom: 28px;" />
+
+  <div class="cert-grid">
+    
+    <div class="cert-card">
+      <div class="cert-icon" aria-hidden="true">AWS</div>
+      <div>
+        <div class="cert-name">AWS Certified Solutions Architect – Associate</div>
+        <div class="cert-issuer">Amazon Web Services</div>
+      </div>
+    </div>
+    
+    <div class="cert-card">
+      <div class="cert-icon" aria-hidden="true">AWS</div>
+      <div>
+        <div class="cert-name">AWS Certified SysOps Administrator – Associate (CloudOps)</div>
+        <div class="cert-issuer">Amazon Web Services</div>
+      </div>
+    </div>
+    
+    <div class="cert-card">
+      <div class="cert-icon" aria-hidden="true">AWS</div>
+      <div>
+        <div class="cert-name">AWS Certified Developer – Associate</div>
+        <div class="cert-issuer">Amazon Web Services</div>
+      </div>
+    </div>
+    
+    <div class="cert-card">
+      <div class="cert-icon" aria-hidden="true">AZ</div>
+      <div>
+        <div class="cert-name">Microsoft Certified: Azure Security Engineer Associate (AZ-500)</div>
+        <div class="cert-issuer">Microsoft Corporation</div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<!-- =====================================================
+     CONNECT HUB
+===================================================== -->
+<section id="connect" class="page-container" aria-label="Connect">
+  <div class="section-heading-block" style="padding: 0 0 16px;">
+    <span class="eyebrow">Connect &amp; Contact</span>
+    <h2>Reach Out &amp; Follow</h2>
+    <p class="section-subtitle">Available for Forward Deploy Engineer, Cloud, and DevSecOps positions.</p>
+  </div>
+  <hr class="section-rule" style="margin-bottom: 28px;" />
+
+  <div class="connect-grid" style="margin-top: 0;">
+    <!-- GitHub -->
+    <a href="https://github.com/Praful224" class="connect-card" id="github-card" target="_blank" rel="noopener noreferrer">
+      <div>
+        <p class="connect-platform">GitHub ↗</p>
+        <p class="connect-handle">@Praful224</p>
+        <p class="connect-desc">Open-source Go tools, automation scripts, Docker setups, and cloud infra code.</p>
+        <div id="github-stats" class="connect-extra" aria-live="polite"></div>
+      </div>
+      <span class="connect-cta">Visit Profile →</span>
+    </a>
+
+    <!-- LinkedIn -->
+    <a href="https://linkedin.com/in/prafulchalakh" class="connect-card" target="_blank" rel="noopener noreferrer">
+      <div>
+        <p class="connect-platform">LinkedIn ↗</p>
+        <p class="connect-handle">@prafulchalakh</p>
+        <p class="connect-desc">Professional background, recommendations, engineering insights, and network.</p>
+        <span class="chip" style="margin-top: 8px; display: inline-block;">500+ Connections</span>
+      </div>
+      <span class="connect-cta">Connect →</span>
+    </a>
+
+    <!-- Instagram Personal -->
+    <a href="https://instagram.com/mee.praf" class="connect-card" target="_blank" rel="noopener noreferrer">
+      <div>
+        <p class="connect-platform">Instagram ↗</p>
+        <p class="connect-handle">@mee.praf</p>
+        <p class="connect-desc">Life outside of terminal: travel, personal moments, and candid frames.</p>
+        <span class="chip" style="margin-top: 8px; display: inline-block;">Personal</span>
+      </div>
+      <span class="connect-cta">Follow →</span>
+    </a>
+
+    <!-- Instagram Creative/Tech -->
+    <a href="https://instagram.com/etcpraful" class="connect-card" target="_blank" rel="noopener noreferrer">
+      <div>
+        <p class="connect-platform">Instagram ↗</p>
+        <p class="connect-handle">@etcpraful</p>
+        <p class="connect-desc">Tech life, creative pursuits, engineering behind the scenes, and updates.</p>
+        <span class="chip" style="margin-top: 8px; display: inline-block;">Tech &amp; Creative</span>
+      </div>
+      <span class="connect-cta">Follow →</span>
+    </a>
+  </div>
+</section>
 
   </main>
 
-  <!-- =====================================================
-       RECRUITER TRAY
-  ===================================================== -->
-  <div class="recruiter-tray" role="complementary" aria-label="Contact call-to-action">
+  <!-- Recruiter Tray -->
+  <div class="recruiter-tray">
     <div class="tray-left">
-      <h3>Let's deploy together.</h3>
-      <p>Targeting Forward Deploy Engineer roles. Based in Hyderabad · Open to relocation · Open to remote.</p>
+      <h3>Let's build &amp; deploy together.</h3>
+      <p>Open to Cloud Engineer, DevSecOps, SRE, Platform &amp; Forward Deploy Engineer roles. Zero-to-one builder comfortable shipping from scratch. Based in Hyderabad · Open to relocation · Open to remote.</p>
     </div>
     <div class="tray-actions">
-      <button class="tray-btn" id="copyEmailBtn" aria-label="Copy email address to clipboard">Copy Email</button>
-      <a href="assets/Praful_Chalakh_Resume.pdf" class="tray-btn tray-btn-accent" download aria-label="Download resume PDF">Resume PDF</a>
-      <a href="https://linkedin.com/in/prafulchalakh" class="tray-btn tray-btn-hot" target="_blank" rel="noopener noreferrer" aria-label="Open LinkedIn profile">LinkedIn ↗</a>
-      <a href="https://github.com/Praful224" class="tray-btn" target="_blank" rel="noopener noreferrer" aria-label="Open GitHub profile">GitHub ↗</a>
+      <button class="tray-btn" id="copyEmailBtn">Copy Email</button>
+      <a href="assets/Praful_Chalakh_Resume.pdf" class="tray-btn tray-btn-accent" download>Resume PDF</a>
+      <a href="https://linkedin.com/in/prafulchalakh" class="tray-btn tray-btn-hot" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+      <a href="https://github.com/Praful224" class="tray-btn" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
     </div>
   </div>
 
-  <!-- =====================================================
-       FOOTER
-  ===================================================== -->
-  <footer>
-    <span>© 2025 Praful Chalakh. Built with care.</span>
-    <nav class="footer-links" aria-label="Footer links">
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <span>© 2026 Praful Chalakh · Built with purpose &amp; clean Python routing</span>
+    <div class="footer-links">
       <a href="https://github.com/Praful224" target="_blank" rel="noopener noreferrer">GitHub</a>
       <a href="https://linkedin.com/in/prafulchalakh" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      <a href="assets/Praful_Chalakh_Resume.pdf" download>Resume</a>
-      <a href="mailto:praful.chalakh@example.com">Email</a>
-    </nav>
+      <a href="mailto:prafulchalakh224@gmail.com">Email</a>
+    </div>
   </footer>
 
-  <!-- Toast notification -->
   <div id="toast" role="status" aria-live="polite"></div>
 
-  <!-- Blinking cursor animation -->
-  <style>
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
-    }
-    #term-cursor { animation: blink 1.1s step-end infinite; }
-  </style>
-
-  <!-- Minimal inline JS: theme toggle + email copy + cursor -->
+  <script src="static/js/avatar_and_utils.js"></script>
   <script>
-    // Theme toggle
-    const themeBtn = document.getElementById('themeBtn');
-    const html = document.documentElement;
-    const saved = localStorage.getItem('theme');
-    if (saved) html.setAttribute('data-theme', saved);
-    themeBtn.addEventListener('click', () => {
-      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      html.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
-    });
-
-    // Toast helper (exposed for JS modules)
-    function showToast(msg, duration = 2500) {
-      const t = document.getElementById('toast');
-      t.textContent = msg;
-      t.classList.add('show');
-      setTimeout(() => t.classList.remove('show'), duration);
+    // Copy email handler
+    const copyBtn = document.getElementById('copyEmailBtn');
+    if (copyBtn) {
+      copyBtn.addEventListener('click', () => {
+        navigator.clipboard.writeText('prafulchalakh224@gmail.com').then(() => {
+          showToast('Email copied! 📋');
+        }).catch(() => {
+          showToast('prafulchalakh224@gmail.com');
+        });
+      });
     }
-    window.showToast = showToast;
-
-    // Copy email
-    document.getElementById('copyEmailBtn').addEventListener('click', () => {
-      navigator.clipboard.writeText('prafulchalakh224@gmail.com').then(() => {
-        showToast('Email copied! 📋');
-      }).catch(() => {
-        showToast('prafulchalakh224@gmail.com');
-      });
-    });
-
-    // Filter buttons (projects)
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        // Belt JS will pick up data-filter via event delegation
-        document.getElementById('proj-stage').dispatchEvent(
-          new CustomEvent('filter', { detail: btn.dataset.filter, bubbles: true })
-        );
-      });
-    });
   </script>
-
-  <!-- Interactive Detail Modal -->
-  <div class="detail-modal-backdrop" id="detailModalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <div class="detail-modal">
-      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close details">✕</button>
-      <div class="modal-header">
-        <div class="modal-category" id="modalCategory">Project Details</div>
-        <h3 class="modal-title" id="modalTitle">DoktriAI</h3>
-        <div class="modal-subtitle" id="modalSubtitle">Container Control Plane &amp; AI Agent Gateway</div>
-      </div>
-      <div class="modal-body">
-        <div class="modal-desc-heading">Technical Highlights &amp; Architecture</div>
-        <ul class="modal-bullets" id="modalBullets">
-          <!-- Injected via JS -->
-        </ul>
-        <div class="modal-desc-heading">Technologies Used</div>
-        <div class="modal-tags" id="modalTags">
-          <!-- Injected via JS -->
-        </div>
-        <div class="modal-footer" id="modalFooter">
-          <!-- Injected via JS -->
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script src="avatar_and_utils.js"></script>
-  <script src="belt_and_canvas.js"></script>
+  
 </body>
 </html>
