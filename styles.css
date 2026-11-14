@@ -37,17 +37,17 @@
     }
 
     [data-theme="dark"] {
-      --bg: #0A1118;
-      --bg-surface: #121B24;
-      --bg-inset: #192532;
-      --ink: #F1F5F9;
+      --bg: #090A0E;
+      --bg-surface: #11141C;
+      --bg-inset: #181D26;
+      --ink: #F8FAFC;
       --body: #CBD5E1;
       --muted: #64748B;
-      --code: #8B9BB0;
-      --hot: #FF6B2C;
-      --hot-soft: #3D1A08;
-      --navy: #38BDF8;
-      --border: #223243;
+      --code: #94A3B8;
+      --hot: #FF5A1F;
+      --hot-soft: #2E150B;
+      --navy: #1E293B;
+      --border: #222938;
     }
 
     /* =========================================================

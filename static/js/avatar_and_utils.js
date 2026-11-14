@@ -124,16 +124,20 @@ function initIcosahedron() {
    ================================================================ */
 function initTheme() {
   var btn = document.getElementById('themeBtn');
-  if (!btn) return;
   var root = document.documentElement;
   var stored = localStorage.getItem('theme');
-  if (stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  // Default to Light Mode (signature editorial feel) unless explicitly toggled
+  if (stored === 'dark') {
     root.setAttribute('data-theme', 'dark');
+  } else {
+    root.setAttribute('data-theme', 'light');
   }
+  if (!btn) return;
   btn.addEventListener('click', function() {
     var isDark = root.getAttribute('data-theme') === 'dark';
-    root.setAttribute('data-theme', isDark ? 'light' : 'dark');
-    localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    var next = isDark ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
   });
 }
 
