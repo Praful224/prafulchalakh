@@ -2,7 +2,7 @@
 <html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Work Experience — Praful Chalakh</title>
   <meta name="description" content="Praful Chalakh — Forward Deploy · Cloud &amp; DevSecOps · SRE. Software Engineer — Golang, Docker &amp; CI/CD | Cloud, DevSecOps &amp; SRE" />
 
@@ -73,6 +73,23 @@
     .metric-badge strong {
       color: var(--hot);
     }
+    @media (max-width: 768px) {
+      .page-container {
+        padding: 18px 16px 40px;
+      }
+      .card-grid-page {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        margin-top: 18px;
+      }
+      .clickable-card-item {
+        padding: 22px 18px;
+      }
+      .experience-full-card,
+      .detail-card-panel {
+        padding: 22px 18px !important;
+      }
+    }
   </style>
   
 </head>
@@ -109,6 +126,30 @@
         </button>
 
         <a href="assets/Praful_Chalakh_Resume.pdf" class="btn-resume" download="Praful_Chalakh_Resume.pdf">Resume ↓</a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-toggle-btn" id="mobileToggleBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="hamburger-bar bar-1"></span>
+          <span class="hamburger-bar bar-2"></span>
+          <span class="hamburger-bar bar-3"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
+      <ul class="mobile-nav-list" role="list">
+        <li><a href="index.html" class="mobile-nav-item ">Overview</a></li>
+        <li><a href="/experience" class="mobile-nav-item active">Experience</a></li>
+        <li><a href="projects.html" class="mobile-nav-item ">Projects</a></li>
+        <li><a href="/#skills" class="mobile-nav-item">Skills</a></li>
+        <li><a href="/#connect" class="mobile-nav-item">Connect</a></li>
+      </ul>
+      <div class="mobile-drawer-footer">
+        <a href="assets/Praful_Chalakh_Resume.pdf" class="mobile-drawer-resume-btn" download="Praful_Chalakh_Resume.pdf">
+          <span>Download Resume PDF</span>
+          <span aria-hidden="true">↓</span>
+        </a>
       </div>
     </div>
   </nav>
@@ -127,7 +168,7 @@
 
   <div style="display: flex; flex-direction: column; gap: 36px;">
     
-    <div style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.04);">
+    <div class="experience-full-card" style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.04);">
       <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px; margin-bottom: 12px;">
         <div>
           <span style="font-family: var(--mono); font-size: 11.5px; font-weight: 700; color: var(--hot); text-transform: uppercase;">Aug 2026 – Present</span>
@@ -209,7 +250,7 @@
       </div>
     </div>
     
-    <div style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.04);">
+    <div class="experience-full-card" style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.04);">
       <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px; margin-bottom: 12px;">
         <div>
           <span style="font-family: var(--mono); font-size: 11.5px; font-weight: 700; color: var(--hot); text-transform: uppercase;">Nov 2024 – Aug 2026</span>

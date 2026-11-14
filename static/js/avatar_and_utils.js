@@ -271,7 +271,63 @@ function initFilters() {
 }
 
 /* ================================================================
-   8. SMOOTH SCROLL (native-scroll polyfill for anchor links)
+   8. MOBILE NAVIGATION DRAWER
+   ================================================================ */
+function initMobileNav() {
+  var toggleBtn = document.getElementById('mobileToggleBtn');
+  var drawer = document.getElementById('mobileNavDrawer');
+  if (!toggleBtn || !drawer) return;
+
+  function openMenu() {
+    toggleBtn.classList.add('is-active');
+    toggleBtn.setAttribute('aria-expanded', 'true');
+    drawer.classList.add('is-open');
+    drawer.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('mobile-nav-locked');
+  }
+
+  function closeMenu() {
+    toggleBtn.classList.remove('is-active');
+    toggleBtn.setAttribute('aria-expanded', 'false');
+    drawer.classList.remove('is-open');
+    drawer.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('mobile-nav-locked');
+  }
+
+  toggleBtn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    var isOpen = drawer.classList.contains('is-open');
+    if (isOpen) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+
+  // Close when tapping any link inside the drawer
+  drawer.querySelectorAll('a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      closeMenu();
+    });
+  });
+
+  // Close when clicking outside
+  document.addEventListener('click', function(e) {
+    if (drawer.classList.contains('is-open') && !drawer.contains(e.target) && !toggleBtn.contains(e.target)) {
+      closeMenu();
+    }
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && drawer.classList.contains('is-open')) {
+      closeMenu();
+    }
+  });
+}
+
+/* ================================================================
+   9. SMOOTH SCROLL (native-scroll polyfill for anchor links)
    ================================================================ */
 function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
@@ -292,6 +348,7 @@ document.addEventListener('DOMContentLoaded', function() {
   initIcosahedron();
   initScrollReveal();
   initActiveNav();
+  initMobileNav();
   initSmoothScroll();
   initClipboard();
   initFilters();

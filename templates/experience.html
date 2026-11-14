@@ -15,7 +15,7 @@
 
   <div style="display: flex; flex-direction: column; gap: 36px;">
     {% for exp in data.experiences %}
-    <div style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.04);">
+    <div class="experience-full-card" style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.04);">
       <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px; margin-bottom: 12px;">
         <div>
           <span style="font-family: var(--mono); font-size: 11.5px; font-weight: 700; color: var(--hot); text-transform: uppercase;">{{ exp.period }}</span>
