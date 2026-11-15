@@ -146,7 +146,7 @@
       padding: 0 24px;
       display: flex;
       align-items: center;
-      gap: 32px;
+      justify-content: space-between;
       height: 100%;
     }
 
@@ -155,7 +155,8 @@
       align-items: center;
       gap: 10px;
       text-decoration: none;
-      flex-shrink: 0;
+      flex: 1;
+      justify-content: flex-start;
     }
 
     .brand-avatar {
@@ -210,8 +211,10 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 8px;
-      flex: 1;
+      justify-content: center;
+      gap: 6px;
+      flex: 0 0 auto;
+      margin: 0 auto;
     }
 
     .nav-links a {
@@ -221,8 +224,8 @@
       letter-spacing: 0.02em;
       color: var(--body);
       text-decoration: none;
-      padding: 6px 12px;
-      border-radius: 4px;
+      padding: 6px 14px;
+      border-radius: 6px;
       transition: color 0.15s, background 0.15s;
     }
 
@@ -231,11 +234,18 @@
       background: var(--bg-inset);
     }
 
+    .nav-links a.active {
+      color: var(--hot);
+      background: rgba(255, 90, 31, 0.08);
+      font-weight: 600;
+    }
+
     .nav-actions {
       display: flex;
       align-items: center;
+      justify-content: flex-end;
       gap: 10px;
-      margin-left: auto;
+      flex: 1;
     }
 
     .theme-btn {
